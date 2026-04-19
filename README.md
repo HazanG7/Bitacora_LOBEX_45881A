@@ -56,7 +56,7 @@ Pasos:
 La app está configurada con base:
 
 ```ts
-base: '/lobex-bitacora/'
+base: '/Bitacora_LOBEX_45881A/'
 ```
 
-Asegúrate de que el nombre del repositorio sea `lobex-bitacora` o ajusta `vite.config.ts` si usas otro nombre.
+Este repositorio se publica en GitHub Pages con el nombre exacto `Bitacora_LOBEX_45881A`, por eso `vite.config.ts` usa esa base.
