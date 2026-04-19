@@ -45,7 +45,7 @@ jobs:
             echo 'dist/index.html still references /src/main.tsx';
             exit 1;
           fi
-          grep -Eq 'assets/.*\\.js' dist/index.html
+          grep -Eq '/Bitacora_LOBEX_45881A/assets/index-[^"]+\\.js' dist/index.html
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
