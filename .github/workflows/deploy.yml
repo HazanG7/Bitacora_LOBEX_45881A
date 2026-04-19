@@ -2,7 +2,7 @@ name: Deploy Vite to GitHub Pages
 
 on:
   push:
-    branches: ["main"]
+    branches: ["main", "master"]
   workflow_dispatch:
 
 permissions:
@@ -17,6 +17,9 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: .
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -35,6 +38,9 @@ jobs:
 
       - name: Verify dist output
         run: test -d dist
+
+      - name: Verify dist/index.html
+        run: test -f dist/index.html
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
