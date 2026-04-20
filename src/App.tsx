@@ -18,6 +18,7 @@ import {
 } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
 import { entries } from './data/entries';
+import EvidenceCarousel from './components/EvidenceCarousel';
 import { coverInfo, sections } from './data/sections';
 
 const asset = (fileName: string) => `${import.meta.env.BASE_URL}assets/svg/${fileName}`;
@@ -74,23 +75,6 @@ function SectionTitle({ eyebrow, title, children }: { eyebrow: string; title: st
       <p className="mb-2 text-sm font-semibold uppercase tracking-[0.3em] text-red-400">{eyebrow}</p>
       <h2 className="text-3xl font-black tracking-tight text-white md:text-5xl">{title}</h2>
       {children && <p className="mx-auto mt-4 max-w-3xl text-base leading-7 text-zinc-300">{children}</p>}
-    </div>
-  );
-}
-
-function EvidenceImage({ imageFile, title }: { imageFile?: string; title: string }) {
-  if (!imageFile) return null;
-  return (
-    <div className="mb-6 overflow-hidden rounded-3xl border border-white/10 bg-black/30">
-      <img
-        src={asset(imageFile)}
-        alt={`Evidencia visual: ${title}`}
-        className="h-56 w-full object-cover transition duration-500 hover:scale-[1.02] md:h-72"
-      />
-      <div className="flex items-center gap-2 border-t border-white/10 bg-black/30 px-4 py-3 text-xs text-zinc-400">
-        <ImageIcon className="h-4 w-4 text-red-300" />
-        Evidencia visual de la bitácora · {title}
-      </div>
     </div>
   );
 }
@@ -225,51 +209,60 @@ export default function LobexDigitalNotebook() {
                   </div>
                 </div>
                 <div className="p-6 md:p-8">
-                  <EvidenceImage imageFile={entry.imageFile} title={entry.title} />
-                  <h3 className="text-2xl font-black text-white">{entry.title}</h3>
-                  <div className="mt-4 flex flex-wrap gap-2">
-                    <Tag>{entry.stage}</Tag>
+                  <div className="rounded-3xl border border-white/10 bg-white/[0.03] p-5">
+                    <h3 className="text-2xl font-black text-white">{entry.title}</h3>
+                    <div className="mt-3 flex flex-wrap gap-2">
+                      <Tag>{entry.stage}</Tag>
+                    </div>
                   </div>
 
-                  <div className="mt-6 space-y-4">
-                    <div className="rounded-2xl bg-black/20 p-4">
+                  <div className="mt-4 space-y-4">
+                    <div className="rounded-2xl border border-white/10 bg-black/20 p-4">
                       <p className="mb-2 text-xs font-bold uppercase tracking-widest text-red-300">Objetivo</p>
-                      <p className="text-sm leading-6 text-zinc-300">{entry.objective}</p>
+                      <p className="whitespace-pre-line text-sm leading-6 text-zinc-300">{entry.objective}</p>
                     </div>
-                    <div className="rounded-2xl bg-black/20 p-4">
+                    <div className="rounded-2xl border border-white/10 bg-black/20 p-4">
                       <p className="mb-2 text-xs font-bold uppercase tracking-widest text-red-300">Actividades</p>
                       <ul className="list-disc space-y-2 pl-5 text-sm leading-6 text-zinc-300">
                         {entry.activities.map((activity, activityIndex) => (
-                          <li key={`${entry.dateISO}-activity-${activityIndex}`}>{activity}</li>
+                          <li key={`${entry.dateISO}-activity-${activityIndex}`} className="whitespace-pre-line">
+                            {activity}
+                          </li>
                         ))}
                       </ul>
                     </div>
                     <div className="grid gap-4 md:grid-cols-2">
-                      <div className="rounded-2xl bg-black/20 p-4">
+                      <div className="rounded-2xl border border-white/10 bg-black/20 p-4">
                         <p className="mb-2 text-xs font-bold uppercase tracking-widest text-red-300">Desarrollo técnico</p>
-                        <p className="text-sm leading-6 text-zinc-300">{entry.technicalDevelopment}</p>
+                        <p className="whitespace-pre-line text-sm leading-6 text-zinc-300">{entry.technicalDevelopment}</p>
                       </div>
-                      <div className="rounded-2xl bg-black/20 p-4">
+                      <div className="rounded-2xl border border-white/10 bg-black/20 p-4">
                         <p className="mb-2 text-xs font-bold uppercase tracking-widest text-red-300">Observaciones</p>
-                        <p className="text-sm leading-6 text-zinc-300">{entry.observations}</p>
+                        <p className="whitespace-pre-line text-sm leading-6 text-zinc-300">{entry.observations}</p>
                       </div>
                     </div>
                     <div className="grid gap-4 md:grid-cols-2">
-                      <div className="rounded-2xl bg-black/20 p-4">
+                      <div className="rounded-2xl border border-white/10 bg-black/20 p-4">
                         <p className="mb-2 text-xs font-bold uppercase tracking-widest text-red-300">Resultados</p>
-                        <p className="text-sm leading-6 text-zinc-300">{entry.results}</p>
+                        <p className="whitespace-pre-line text-sm leading-6 text-zinc-300">{entry.results}</p>
                       </div>
-                      <div className="rounded-2xl bg-black/20 p-4">
+                      <div className="rounded-2xl border border-white/10 bg-black/20 p-4">
                         <p className="mb-2 text-xs font-bold uppercase tracking-widest text-red-300">Detalles</p>
-                        <p className="text-sm leading-6 text-zinc-300">{entry.details}</p>
+                        <p className="whitespace-pre-line text-sm leading-6 text-zinc-300">{entry.details}</p>
                       </div>
                     </div>
-                    <div className="rounded-2xl bg-black/20 p-4">
-                      <p className="mb-2 text-xs font-bold uppercase tracking-widest text-red-300">Referencias</p>
-                      <p className="text-sm leading-6 text-zinc-300">
-                        Imágenes: {entry.imageRefs.length ? entry.imageRefs.join(', ') : 'Sin referencia de imagen específica'}.
-                      </p>
-                      <p className="text-sm leading-6 text-zinc-300">Páginas fuente: {entry.sourcePages.join(', ')}.</p>
+
+                    <EvidenceCarousel imageRefs={entry.imageRefs} imageFile={entry.imageFile} title={entry.title} />
+
+                    <div className="rounded-2xl border border-white/10 bg-black/20 p-4">
+                      <p className="mb-2 text-xs font-bold uppercase tracking-widest text-red-300">Fuentes</p>
+                      <ul className="list-disc space-y-1 pl-5 text-sm leading-6 text-zinc-300">
+                        {entry.sourcePages.map((source, sourceIndex) => (
+                          <li key={`${entry.dateISO}-source-${sourceIndex}`} className="whitespace-pre-line">
+                            {source}
+                          </li>
+                        ))}
+                      </ul>
                     </div>
                   </div>
                 </div>
