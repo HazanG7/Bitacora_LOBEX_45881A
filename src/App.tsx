@@ -18,23 +18,25 @@ import {
 } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
 
+const asset = (fileName: string) => `${import.meta.env.BASE_URL}assets/svg/${fileName}`;
+
 const notebookImages = {
-  cecytemLogo: '/assets/cecytemLogo.svg',
-  lobexLogo: '/assets/lobexLogo.svg',
-  vexLogo: '/assets/vexLogo.svg',
-  robotLogo: '/assets/robotLogo.svg',
-  teamPhoto: '/assets/teamPhoto.svg',
-  methodology: '/assets/methodology.svg',
-  prototypeGuided: '/assets/prototypeGuided.svg',
-  fundraising: '/assets/fundraising.svg',
-  cadBlock: '/assets/cadBlock.svg',
-  designChange: '/assets/designChange.svg',
-  lagunillas: '/assets/lagunillas.svg',
-  improvements: '/assets/improvements.svg',
-  pneumatics: '/assets/pneumatics.svg',
-  agostitlan: '/assets/agostitlan.svg',
-  postAgostitlan: '/assets/postAgostitlan.svg',
-  rechargeTests: '/assets/rechargeTests.svg'
+  cecytemLogo: asset('cecytemLogo.svg'),
+  lobexLogo: asset('lobexLogo.svg'),
+  vexLogo: asset('vexLogo.svg'),
+  robotLogo: asset('robotLogo.svg'),
+  teamPhoto: asset('teamPhoto.svg'),
+  methodology: asset('methodology.svg'),
+  prototypeGuided: asset('prototypeGuided.svg'),
+  fundraising: asset('fundraising.svg'),
+  cadBlock: asset('cadBlock.svg'),
+  designChange: asset('designChange.svg'),
+  lagunillas: asset('lagunillas.svg'),
+  improvements: asset('improvements.svg'),
+  pneumatics: asset('pneumatics.svg'),
+  agostitlan: asset('agostitlan.svg'),
+  postAgostitlan: asset('postAgostitlan.svg'),
+  rechargeTests: asset('rechargeTests.svg')
 } as const;
 
 type ImageKey = keyof typeof notebookImages;
