@@ -20,13 +20,14 @@ export const sections: InfoSection[] = [
     id: 'portada',
     title: 'Portada del proyecto',
     content: [
-      'Colegio de Estudios Científicos y Tecnológicos de Michoacán.',
-      'Plantel 17 Ciudad Hidalgo.',
-      'Prototipo VEX Robotics 2025-2026 · PUSH BACK.',
-      'Team name: LOBEX.',
-      'Team number: 45881A.',
-      'Season: VEX Robotics 2025–2026.',
-      'Start date: 08 de septiembre del 2025.'
+      'Colegio de Estudios Científicos y Tecnológicos de Michoacán',
+      'Plantel 17 Ciudad Hidalgo',
+      'Prototipo VEX Robotics 2025-2026',
+      'PUSH BACK',
+      'Team name: LOBEX',
+      'Team number: 45881A',
+      'Season: VEX Robotics 2025–2026',
+      'Start date: 08 de septiembre del 2025'
     ]
   },
   {
@@ -45,9 +46,18 @@ export const sections: InfoSection[] = [
     id: 'objetivos-equipo',
     title: 'Objetivos del equipo',
     content: [
-      'Objetivos de desempeño: clasificar a competencias nacionales e internacionales; mantener un robot competitivo durante la temporada con actualizaciones constantes; obtener reconocimientos como Innovación y Excelencia en Ingeniería.',
-      'Objetivos estratégicos: desarrollar estrategias de juego avanzadas para distintos rivales; establecer alianzas sólidas con equipos de alto nivel; optimizar tiempos de construcción, ajuste y mantenimiento durante torneos.',
-      'Objetivos de proyección: representar con excelencia a la institución; contribuir al desarrollo de la comunidad educativa promoviendo ciencia y tecnología; alcanzar la clasificación al VEX Robotics World Championship.'
+      'Objetivos de desempeño:',
+      'Clasificar a competencias nacionales e internacionales.',
+      'Mantener un robot competitivo a lo largo de toda la temporada, con actualizaciones constantes en diseño, programación y estrategia.',
+      'Obtener reconocimientos en diversas categorías como Innovación y Excelencia en Ingeniería, demostrando calidad técnica y creatividad.',
+      'Objetivos estratégicos:',
+      'Desarrollar estrategias de juego avanzadas que permitan adaptarse con eficacia a distintos rivales y circunstancias de la competencia.',
+      'Establecer alianzas sólidas con equipos de alto nivel en cada torneo, con el fin de fortalecer las posibilidades de alcanzar rondas eliminatorias y finales.',
+      'Optimizar los tiempos de construcción, ajustes y mantenimiento del robot durante los eventos, respondiendo con rapidez ante cualquier eventualidad.',
+      'Objetivos de proyección:',
+      'Representar con excelencia a la institución, consolidándonos como referente en el ámbito de la robótica escolar.',
+      'Contribuir al desarrollo de la comunidad educativa mediante la promoción del interés por la ciencia, la tecnología y la innovación.',
+      'Alcanzar la clasificación al VEX Robotics World Championship, como meta máxima que refleje el esfuerzo colectivo del equipo.'
     ]
   },
   {
@@ -63,14 +73,20 @@ export const sections: InfoSection[] = [
     id: 'objetivos-proyecto',
     title: 'Objetivos del proyecto',
     content: [
-      'Desarrollar, construir, documentar y presentar un robot competitivo para el reto PUSH BACK de VEX Robotics de la temporada 2025-2026, integrando conocimientos de diseño, mecánica, robótica, programación y trabajo en equipo, con el fin de participar exitosamente en torneos regionales, estatales y clasificatorios.',
-      'Objetivos específicos: diseñar un robot funcional para PUSH BACK; optimizar desempeño mediante iteraciones; desarrollar un control intuitivo para el piloto; implementar un programa autónomo estable y eficiente; documentar formalmente cada etapa del proyecto.'
+      'Desarrollar, construir, documentar y presentar un robot competitivo para el reto PUSH BACK de VEX Robotics de la temporada 2025-2026, integrando conocimientos de diseño, mecánica, robótica, programación y trabajo en equipo, con el fin de participar exitosamente en los torneos regionales de prueba, estatales pre-clasificatorios y clasificatorios e internacionales clasificatorios para obtener el pase al VEX World Championship 2025–2026.',
+      'Objetivos específicos:',
+      'Diseñar un robot funcional capaz de superar todos los retos planteados en PUSH BACK.',
+      'Optimizar el desempeño del robot mediante iteraciones de diseño y mejoras continuas.',
+      'Desarrollar un sistema de control intuitivo para el piloto, para facilitar la conducción del robot y así tener un tiempo de reacción más corto.',
+      'Implementar un programa autónomo estable y eficiente.',
+      'Documentar formalmente cada etapa del proyecto.'
     ]
   },
   {
     id: 'alcance',
     title: 'Alcance del proyecto',
     content: [
+      'El proyecto contempla:',
       'Armado del prototipo guiado VEX como base de aprendizaje.',
       'Diseño y construcción de un robot propio.',
       'Desarrollo de mecanismos de elevación, recolección y anotación.',
@@ -88,6 +104,7 @@ export const sections: InfoSection[] = [
     title: 'Metodología de trabajo',
     content: [
       'Se empleó un ciclo iterativo de análisis, diseño, construcción, prueba y mejora.',
+      'Etapas:',
       '1. Análisis del reto: revisión de reglas, puntuación y dimensionalidad.',
       '2. Desarrollo de prototipo inicial: armado del robot guiado VEX.',
       '3. Iteración de diseño: modificaciones basadas en pruebas físicas.',
