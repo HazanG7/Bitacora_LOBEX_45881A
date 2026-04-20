@@ -834,211 +834,379 @@ export const entries: Entry[] = [
     time: '12:30-15:00',
     stage: 'Pruebas',
     title: 'Pruebas del mecanismo para sacar bloques del tubo de recargas',
-    objective: 'Probar mecanismo de extracción de recargas.',
-    activities: ['Pruebas del mecanismo sin instalar.', 'Pruebas del mecanismo con robot.'],
-    technicalDevelopment: 'Se realizaron pruebas para sacar bloques del tubo de recargas en banco y en robot.',
-    observations: 'La entrada se apoya en evidencia visual de la secuencia de pruebas.',
-    results: 'Se obtuvo evidencia de funcionamiento inicial para ajustes posteriores.',
-    details: 'Jornada de validación práctica del sistema de recarga.',
-    imageRefs: ['Imagen 26.0', 'Imagen 26.1', 'Imagen 26.2'],
-    sourcePages: sourceNov,
+    objective: 'Validar el mecanismo para sacar bloques del tubo de recargas.',
+    activities: ['Pruebas del mecanismo sin instalarlo en el robot.', 'Pruebas del mecanismo con el robot.'],
+    technicalDevelopment:
+      'Se realizaron pruebas del mecanismo para poder sacar bloques del tubo de recargas.',
+    observations:
+      'La entrada se respalda por evidencia visual de primeras pruebas y pruebas integradas al robot.',
+    results: 'Se probó el mecanismo tanto sin instalarlo como con el robot.',
+    details: 'Conservar referencias a pruebas de recarga.',
+    imageRefs: ['Imagen 26.0 Primeras pruebas sin instalarlo en el robot.', 'Imagen 26.1.', 'Imagen 26.2 Pruebas con el robot.'],
+    sourcePages: ['PDF sección noviembre 2025'],
     imageFile: 'entry-2025-11-04.svg'
   },
-  createVisualEntry({
+  {
     dateISO: '2025-11-05',
     dateLabel: 'Miércoles 05 de noviembre del 2025',
-    title: 'Evidencia visual del desarrollo del robot',
+    place: 'Laboratorio de Robótica',
+    time: '12:30-15:00',
     stage: 'Evidencia visual',
-    sourcePages: sourceNov,
-    imageFile: 'entry-2025-11-05.svg',
-    text: visualA,
-    time: '12:30-15:00'
-  }),
-  createVisualEntry({
+    title: 'Evidencia visual del desarrollo del robot',
+    objective: 'Conservar evidencia visual del avance del robot.',
+    activities: ['Registro visual del desarrollo del robot.', 'Seguimiento documental de la jornada.'],
+    technicalDevelopment:
+      'La bitácora física registra esta jornada principalmente mediante evidencia visual. Esta entrada se conserva como prueba de continuidad del trabajo, seguimiento del desarrollo del robot y documentación del proceso previo a las siguientes etapas de competencia.',
+    observations:
+      'No se agregan detalles técnicos adicionales porque el registro original se apoya principalmente en imágenes.',
+    results: 'Se conserva la jornada como evidencia visual del proceso.',
+    details: 'Entrada de seguimiento visual.',
+    imageRefs: ['Imagen 27.0.', 'Imagen 27.1.', 'Imagen 27.2.', 'Imagen 27.3.'],
+    sourcePages: ['PDF sección noviembre 2025'],
+    imageFile: 'entry-2025-11-05.svg'
+  },
+  {
     dateISO: '2025-11-06',
     dateLabel: 'Jueves 06 de noviembre del 2025',
-    title: 'Evidencia visual de ajustes y avances',
+    place: 'Laboratorio de Robótica',
+    time: '12:30-15:00',
     stage: 'Evidencia visual',
-    sourcePages: sourceNov,
-    imageFile: 'entry-2025-11-06.svg',
-    text: visualB,
-    time: '12:30-15:00'
-  }),
-  createVisualEntry({
+    title: 'Evidencia visual de ajustes y avances',
+    objective: 'Registrar visualmente ajustes y avances del robot.',
+    activities: ['Registro visual de avances.', 'Seguimiento de ajustes del robot.'],
+    technicalDevelopment:
+      'La bitácora registra esta jornada mediante imágenes de avance y ajustes. Se conserva como evidencia de seguimiento del desarrollo del robot y continuidad del trabajo técnico.',
+    observations:
+      'No se agregan detalles técnicos adicionales no documentados en el registro original.',
+    results: 'Se mantiene evidencia visual de ajustes y avances.',
+    details: 'Entrada de evidencia visual.',
+    imageRefs: ['Imagen 28.0.', 'Imagen 28.1.', 'Imagen 28.2.'],
+    sourcePages: ['PDF sección noviembre 2025'],
+    imageFile: 'entry-2025-11-06.svg'
+  },
+  {
     dateISO: '2025-11-07',
     dateLabel: 'Viernes 07 de noviembre del 2025',
-    title: 'Evidencia visual de pruebas y preparación',
+    place: 'Laboratorio de Robótica',
+    time: '12:30-15:00',
     stage: 'Evidencia visual',
-    sourcePages: sourceNov,
-    imageFile: 'entry-2025-11-07.svg',
-    text: visualC,
-    time: '12:30-15:00'
-  }),
-  createVisualEntry({
+    title: 'Evidencia visual de pruebas y preparación',
+    objective: 'Conservar evidencia visual de pruebas y preparación.',
+    activities: [
+      'Registro visual de pruebas.',
+      'Registro visual de preparación.',
+      'Seguimiento documental del desarrollo del robot.'
+    ],
+    technicalDevelopment:
+      'La jornada se conserva como evidencia visual de pruebas, ajustes y preparación. No se agregan detalles técnicos adicionales porque el registro original se apoya principalmente en imágenes.',
+    observations:
+      'La información textual de esta fecha es limitada, por lo que se mantiene como registro de continuidad.',
+    results: 'Se conserva evidencia visual del proceso de preparación.',
+    details: 'Entrada basada principalmente en imágenes.',
+    imageRefs: ['Imagen 29.0.', 'Imagen 29.1.', 'Imagen 29.2.', 'Imagen 29.3.', 'Imagen 29.4.', 'Imagen 29.5.'],
+    sourcePages: ['PDF sección noviembre 2025'],
+    imageFile: 'entry-2025-11-07.svg'
+  },
+  {
     dateISO: '2025-11-08',
     dateLabel: 'Sábado 08 de noviembre del 2025',
-    title: 'Jornada sabatina de preparación',
+    place: 'Laboratorio de Robótica',
+    time: '08:30-12:30',
     stage: 'Preparación',
-    sourcePages: sourceNov,
-    imageFile: 'entry-2025-11-08.svg',
-    text: visualA
-  }),
-  createVisualEntry({
+    title: 'Jornada sabatina de preparación',
+    objective: 'Registrar una sesión de preparación fuera del horario regular.',
+    activities: ['Jornada sabatina de preparación.', 'Seguimiento del desarrollo del robot.'],
+    technicalDevelopment:
+      'La bitácora física registra esta jornada como una sesión de preparación realizada fuera del horario regular. Se conserva como evidencia de compromiso, continuidad y seguimiento del desarrollo del robot.',
+    observations: 'No se agregan detalles técnicos no documentados.',
+    results: 'Se mantiene registro de preparación sabatina.',
+    details: 'Entrada de preparación y continuidad.',
+    imageRefs: ['Evidencia visual de jornada sabatina.'],
+    sourcePages: ['PDF sección noviembre 2025'],
+    imageFile: 'entry-2025-11-08.svg'
+  },
+  {
     dateISO: '2025-11-09',
     dateLabel: 'Domingo 09 de noviembre del 2025',
-    title: 'Jornada dominical de preparación',
+    place: 'Laboratorio de Robótica',
+    time: '08:30-12:30',
     stage: 'Preparación',
-    sourcePages: sourceNov,
-    imageFile: 'entry-2025-11-09.svg',
-    text: visualB
-  }),
-  createVisualEntry({
+    title: 'Jornada dominical de preparación',
+    objective: 'Registrar una jornada dominical de preparación.',
+    activities: ['Jornada dominical de preparación.', 'Seguimiento del trabajo del equipo.'],
+    technicalDevelopment:
+      'La entrada documenta una jornada dominical de preparación. Se conserva como evidencia de continuidad del trabajo del equipo durante el periodo previo a competencia.',
+    observations: 'No se agregan detalles técnicos no documentados.',
+    results: 'Se conserva la jornada como evidencia de continuidad.',
+    details: 'Entrada de preparación fuera de horario regular.',
+    imageRefs: ['Evidencia visual de jornada dominical.'],
+    sourcePages: ['PDF sección noviembre 2025'],
+    imageFile: 'entry-2025-11-09.svg'
+  },
+  {
     dateISO: '2025-11-10',
     dateLabel: 'Lunes 10 de noviembre del 2025',
-    title: 'Preparación previa a competencia',
+    place: 'Laboratorio de Robótica',
+    time: '08:30-12:30',
     stage: 'Preparación',
-    sourcePages: sourceNov,
-    imageFile: 'entry-2025-11-10.svg',
-    text: visualC
-  }),
-  createVisualEntry({
+    title: 'Preparación previa a competencia',
+    objective: 'Registrar preparación previa a competencia.',
+    activities: ['Preparación previa a competencia.', 'Seguimiento del proceso de desarrollo.', 'Organización del equipo.'],
+    technicalDevelopment:
+      'La bitácora registra esta jornada como parte de la preparación previa a competencia. Se mantiene como evidencia de seguimiento del proceso de desarrollo y organización del equipo.',
+    observations: 'La información textual de esta fecha es limitada.',
+    results: 'Se conserva evidencia de preparación previa a competencia.',
+    details: 'Entrada de seguimiento previo a competencia.',
+    imageRefs: ['Evidencia visual de preparación previa.'],
+    sourcePages: ['PDF sección noviembre 2025'],
+    imageFile: 'entry-2025-11-10.svg'
+  },
+  {
     dateISO: '2025-11-11',
     dateLabel: 'Martes 11 de noviembre del 2025',
-    title: 'Seguimiento de preparación del robot',
+    place: 'Laboratorio de Robótica',
+    time: '08:30-12:30',
     stage: 'Preparación',
-    sourcePages: sourceNov,
-    imageFile: 'entry-2025-11-11.svg',
-    text: visualA
-  }),
-  createVisualEntry({
+    title: 'Seguimiento de preparación del robot',
+    objective: 'Registrar seguimiento de preparación del robot.',
+    activities: ['Seguimiento de preparación.', 'Registro de continuidad del trabajo.'],
+    technicalDevelopment:
+      'La jornada se conserva como evidencia de seguimiento de preparación. No se agregan detalles técnicos no documentados en el registro original.',
+    observations: 'Registro de continuidad previo a competencia.',
+    results: 'Se conserva seguimiento documental de preparación.',
+    details: 'Entrada de preparación.',
+    imageRefs: ['Evidencia visual de seguimiento de preparación.'],
+    sourcePages: ['PDF sección noviembre 2025'],
+    imageFile: 'entry-2025-11-11.svg'
+  },
+  {
     dateISO: '2025-11-12',
     dateLabel: 'Miércoles 12 de noviembre del 2025',
-    title: 'Seguimiento de preparación del robot',
+    place: 'Laboratorio de Robótica',
+    time: '08:30-12:30',
     stage: 'Preparación',
-    sourcePages: sourceNov,
-    imageFile: 'entry-2025-11-12.svg',
-    text: visualB
-  }),
+    title: 'Seguimiento de preparación del robot',
+    objective: 'Registrar continuidad de preparación previa al Torneo Estatal.',
+    activities: ['Seguimiento de preparación.', 'Registro de continuidad del trabajo previo al Torneo Estatal.'],
+    technicalDevelopment:
+      'La bitácora conserva esta fecha como parte de la preparación previa al Torneo Estatal inter CECyTE Michoacán. La información textual es limitada, por lo que se mantiene como evidencia de continuidad.',
+    observations: 'No se agregan detalles técnicos no documentados.',
+    results: 'Se conserva la fecha como parte de la preparación previa al Torneo Estatal.',
+    details: 'Entrada de preparación previa al torneo.',
+    imageRefs: ['Evidencia visual de preparación previa al Torneo Estatal.'],
+    sourcePages: ['PDF sección noviembre 2025'],
+    imageFile: 'entry-2025-11-12.svg'
+  },
   {
     dateISO: '2025-11-13',
     dateLabel: 'Jueves 13 de noviembre del 2025',
     place: 'Torneo Estatal inter CECyTE Michoacán',
-    time: 'No especificado en la entrada',
+    time: 'Jornada de competencia',
     stage: 'Torneo',
-    title: 'Torneo Estatal inter CECyTE Michoacán',
-    objective: 'Participar en evaluación estatal del proyecto.',
-    activities: ['Participación en jornada del Torneo Estatal inter CECyTE Michoacán.'],
+    title: 'Torneo Estatal inter CECyTE Michoacán — Día 1',
+    objective:
+      'Participar en el Torneo Estatal inter CECyTE Michoacán, etapa contemplada dentro del alcance del proyecto.',
+    activities: [
+      'Participación en el Torneo Estatal inter CECyTE Michoacán.',
+      'Evaluación del robot en condiciones reales de competencia.',
+      'Observación del desempeño del diseño, programación, manejo y organización del equipo.'
+    ],
     technicalDevelopment:
       'La participación en el Torneo Estatal inter CECyTE Michoacán forma parte del alcance del proyecto documentado en la bitácora. Esta etapa representa una evaluación del robot en condiciones reales de competencia, así como una oportunidad para analizar el desempeño del diseño, la programación, el manejo y la organización del equipo.',
     observations:
-      'Si no hay resultados textuales específicos en el PDF para esta sección, no se inventan; se usa la evidencia visual registrada como respaldo del evento.',
-    results: 'Se conserva registro de participación estatal dentro del proceso del proyecto.',
-    details: 'Entrada de evento estatal correspondiente al primer día (13 de noviembre).',
-    imageRefs: [],
-    sourcePages: sourceNov,
+      'No agregar resultados específicos si no están documentados textualmente. Usar la evidencia visual registrada como respaldo del evento.',
+    results: 'Se conserva esta fecha como parte del proceso competitivo del equipo.',
+    details:
+      'No inventar premios, marcadores ni resultados si no aparecen en la fuente textual proporcionada.',
+    imageRefs: ['Evidencia visual del Torneo Estatal inter CECyTE Michoacán.'],
+    sourcePages: ['PDF sección noviembre 2025 / Torneo Estatal inter CECyTE Michoacán'],
     imageFile: 'entry-2025-11-13.svg'
   },
   {
     dateISO: '2025-11-14',
     dateLabel: 'Viernes 14 de noviembre del 2025',
     place: 'Torneo Estatal inter CECyTE Michoacán',
-    time: 'No especificado en la entrada',
+    time: 'Jornada de competencia',
     stage: 'Torneo',
-    title: 'Torneo Estatal inter CECyTE Michoacán / jornada registrada',
-    objective: 'Mantener documentación de la segunda jornada estatal.',
-    activities: [visualC],
+    title: 'Torneo Estatal inter CECyTE Michoacán — Día 2',
+    objective: 'Registrar la segunda jornada del Torneo Estatal inter CECyTE Michoacán.',
+    activities: [
+      'Participación en la segunda jornada del Torneo Estatal.',
+      'Seguimiento de competencia.',
+      'Registro de evidencia visual del evento.'
+    ],
     technicalDevelopment:
-      'La bitácora conserva evidencia visual de la jornada del Torneo Estatal inter CECyTE Michoacán como parte del seguimiento del desempeño en competencia.',
-    observations: 'No se agregan resultados no presentes textualmente en el PDF.',
-    results: 'Se conserva trazabilidad de la participación en la fecha 14 de noviembre.',
-    details: 'Entrada vinculada al alcance del proyecto en competencia estatal.',
-    imageRefs: [],
-    sourcePages: sourceNov,
+      'Segunda jornada del Torneo Estatal inter CECyTE Michoacán, contemplado dentro del alcance del proyecto. La entrada se conserva como evidencia de participación en competencia y seguimiento del proceso del equipo.',
+    observations:
+      'No inventar resultados, marcadores o premios si no están documentados textualmente.',
+    results: 'Se conserva registro de la segunda jornada del Torneo Estatal.',
+    details: 'Entrada de competencia estatal basada en evidencia visual.',
+    imageRefs: ['Evidencia visual del Torneo Estatal inter CECyTE Michoacán.'],
+    sourcePages: ['PDF sección noviembre 2025 / Torneo Estatal inter CECyTE Michoacán'],
     imageFile: 'entry-2025-11-14.svg'
   },
-  createVisualEntry({
+  {
     dateISO: '2025-11-18',
     dateLabel: 'Martes 18 de noviembre del 2025',
-    title: 'Jornada registrada en bitácora física',
+    place: 'Laboratorio de Robótica',
+    time: '08:30-12:30',
     stage: 'Evidencia visual',
-    sourcePages: sourceNov,
-    imageFile: 'entry-2025-11-18.svg',
-    text: visualA
-  }),
-  createVisualEntry({
+    title: 'Jornada registrada en bitácora física',
+    objective: 'Conservar evidencia de continuidad posterior a competencia.',
+    activities: ['Registro visual de continuidad.', 'Seguimiento del proyecto posterior a competencia.'],
+    technicalDevelopment:
+      'La bitácora física conserva esta fecha mediante evidencia visual. Se mantiene como parte de la trazabilidad del trabajo posterior a competencia.',
+    observations: 'No se agregan detalles técnicos no documentados.',
+    results: 'Se conserva evidencia visual de continuidad.',
+    details: 'Entrada visual posterior a competencia.',
+    imageRefs: ['Evidencia visual registrada en bitácora física.'],
+    sourcePages: ['PDF sección noviembre 2025'],
+    imageFile: 'entry-2025-11-18.svg'
+  },
+  {
     dateISO: '2025-11-19',
     dateLabel: 'Miércoles 19 de noviembre del 2025',
-    title: 'Jornada registrada en bitácora física',
+    place: 'Laboratorio de Robótica',
+    time: '08:30-12:30',
     stage: 'Evidencia visual',
-    sourcePages: sourceNov,
-    imageFile: 'entry-2025-11-19.svg',
-    text: visualB
-  }),
-  createVisualEntry({
+    title: 'Jornada registrada en bitácora física',
+    objective: 'Mantener evidencia de continuidad del proyecto.',
+    activities: ['Registro visual de continuidad.', 'Seguimiento documental del trabajo.'],
+    technicalDevelopment:
+      'La entrada se conserva como evidencia visual de continuidad del proyecto. No se agregan detalles técnicos que no estén documentados.',
+    observations: 'Registro basado principalmente en evidencia visual.',
+    results: 'Se conserva la trazabilidad de la jornada.',
+    details: 'Entrada de seguimiento visual.',
+    imageRefs: ['Evidencia visual registrada en bitácora física.'],
+    sourcePages: ['PDF sección noviembre 2025'],
+    imageFile: 'entry-2025-11-19.svg'
+  },
+  {
     dateISO: '2025-11-21',
     dateLabel: 'Viernes 21 de noviembre del 2025',
-    title: 'Jornada registrada en bitácora física',
+    place: 'Laboratorio de Robótica',
+    time: '08:30-12:30',
     stage: 'Evidencia visual',
-    sourcePages: sourceNov,
-    imageFile: 'entry-2025-11-21.svg',
-    text: visualC
-  }),
-  createVisualEntry({
+    title: 'Jornada registrada en bitácora física',
+    objective: 'Registrar seguimiento visual del proceso de desarrollo del robot.',
+    activities: ['Seguimiento visual del proceso.', 'Documentación de continuidad.'],
+    technicalDevelopment:
+      'La bitácora física registra esta jornada como parte del seguimiento visual del proceso de desarrollo del robot.',
+    observations: 'No se agregan actividades técnicas no documentadas.',
+    results: 'Se conserva evidencia visual de seguimiento.',
+    details: 'Entrada de evidencia visual.',
+    imageRefs: ['Evidencia visual registrada en bitácora física.'],
+    sourcePages: ['PDF sección noviembre 2025'],
+    imageFile: 'entry-2025-11-21.svg'
+  },
+  {
     dateISO: '2025-11-24',
     dateLabel: 'Lunes 24 de noviembre del 2025',
-    title: 'Jornada registrada en bitácora física',
+    place: 'Laboratorio de Robótica',
+    time: '08:30-12:30',
     stage: 'Evidencia visual',
-    sourcePages: sourceNov,
-    imageFile: 'entry-2025-11-24.svg',
-    text: visualA
-  }),
-
-  createVisualEntry({
+    title: 'Jornada registrada en bitácora física',
+    objective: 'Conservar evidencia de continuidad del trabajo y mejora.',
+    activities: ['Seguimiento del trabajo.', 'Documentación del proceso de mejora.'],
+    technicalDevelopment:
+      'La jornada se conserva como evidencia de continuidad del trabajo y documentación del proceso de mejora.',
+    observations: 'La información textual es limitada y se mantiene como evidencia visual.',
+    results: 'Se conserva registro de continuidad.',
+    details: 'Entrada de seguimiento del proceso.',
+    imageRefs: ['Evidencia visual registrada en bitácora física.'],
+    sourcePages: ['PDF sección noviembre 2025'],
+    imageFile: 'entry-2025-11-24.svg'
+  },
+  {
     dateISO: '2025-12-01',
     dateLabel: 'Lunes 01 de diciembre del 2025',
-    title: 'Jornada registrada en bitácora física',
+    place: 'Laboratorio de Robótica',
+    time: '08:30-12:30',
     stage: 'Evidencia visual',
-    sourcePages: sourceDec,
-    imageFile: 'entry-2025-12-01.svg',
-    text: visualB
-  }),
-  createVisualEntry({
+    title: 'Jornada registrada en bitácora física',
+    objective: 'Registrar seguimiento del trabajo durante diciembre.',
+    activities: ['Registro visual del trabajo.', 'Seguimiento documental del equipo.'],
+    technicalDevelopment:
+      'La bitácora física registra esta jornada principalmente mediante evidencia visual. Se conserva como seguimiento del trabajo del equipo durante diciembre.',
+    observations: 'No se agregan detalles técnicos no documentados.',
+    results: 'Se conserva evidencia visual del trabajo durante diciembre.',
+    details: 'Entrada de seguimiento visual.',
+    imageRefs: ['Evidencia visual registrada en bitácora física.'],
+    sourcePages: ['PDF sección diciembre 2025'],
+    imageFile: 'entry-2025-12-01.svg'
+  },
+  {
     dateISO: '2025-12-03',
     dateLabel: 'Miércoles 03 de diciembre del 2025',
-    title: 'Jornada registrada en bitácora física',
+    place: 'Laboratorio de Robótica',
+    time: '08:30-12:30',
     stage: 'Evidencia visual',
-    sourcePages: sourceDec,
-    imageFile: 'entry-2025-12-03.svg',
-    text: visualC
-  }),
-  createVisualEntry({
+    title: 'Jornada registrada en bitácora física',
+    objective: 'Registrar continuidad del proceso durante diciembre.',
+    activities: ['Registro visual de continuidad.', 'Seguimiento del proceso durante diciembre.'],
+    technicalDevelopment:
+      'La entrada documenta continuidad del proceso durante diciembre mediante evidencia visual.',
+    observations: 'No se agregan detalles técnicos no documentados.',
+    results: 'Se mantiene evidencia del seguimiento del proceso.',
+    details: 'Entrada visual de diciembre.',
+    imageRefs: ['Evidencia visual registrada en bitácora física.'],
+    sourcePages: ['PDF sección diciembre 2025'],
+    imageFile: 'entry-2025-12-03.svg'
+  },
+  {
     dateISO: '2025-12-11',
     dateLabel: 'Jueves 11 de diciembre del 2025',
-    title: 'Jornada registrada en bitácora física',
+    place: 'Laboratorio de Robótica',
+    time: '08:30-12:30',
     stage: 'Evidencia visual',
-    sourcePages: sourceDec,
-    imageFile: 'entry-2025-12-11.svg',
-    text: visualA
-  }),
-
-  createVisualEntry({
+    title: 'Jornada registrada en bitácora física',
+    objective: 'Conservar evidencia de seguimiento durante diciembre.',
+    activities: ['Registro visual de seguimiento.', 'Documentación del robot durante diciembre.'],
+    technicalDevelopment:
+      'La jornada se conserva como evidencia de seguimiento y documentación del robot durante diciembre.',
+    observations: 'No se agregan detalles técnicos no documentados.',
+    results: 'Se mantiene registro documental de diciembre.',
+    details: 'Entrada de evidencia visual.',
+    imageRefs: ['Evidencia visual registrada en bitácora física.'],
+    sourcePages: ['PDF sección diciembre 2025'],
+    imageFile: 'entry-2025-12-11.svg'
+  },
+  {
     dateISO: '2026-01-09',
     dateLabel: 'Viernes 09 de enero del 2026',
-    title: 'Jornada registrada en bitácora física',
+    place: 'Laboratorio de Robótica',
+    time: '08:30-12:30',
     stage: 'Evidencia visual',
-    sourcePages: sourceJan,
-    imageFile: 'entry-2026-01-09.svg',
-    text: visualB
-  }),
-  createVisualEntry({
+    title: 'Jornada registrada en bitácora física',
+    objective: 'Registrar seguimiento del trabajo al inicio de enero.',
+    activities: ['Registro visual del trabajo.', 'Seguimiento del equipo al inicio de enero.'],
+    technicalDevelopment:
+      'La bitácora física registra esta jornada como parte del seguimiento del trabajo del equipo al inicio de enero.',
+    observations: 'No se agregan detalles técnicos no documentados.',
+    results: 'Se conserva evidencia visual de seguimiento.',
+    details: 'Entrada visual de enero.',
+    imageRefs: ['Evidencia visual registrada en bitácora física.'],
+    sourcePages: ['PDF sección enero 2026'],
+    imageFile: 'entry-2026-01-09.svg'
+  },
+  {
     dateISO: '2026-01-12',
     dateLabel: 'Lunes 12 de enero del 2026',
-    title: 'Jornada registrada en bitácora física',
+    place: 'Laboratorio de Robótica',
+    time: '08:30-12:30',
     stage: 'Evidencia visual',
-    sourcePages: sourceJan,
-    imageFile: 'entry-2026-01-12.svg',
-    text: visualC
-  }),
+    title: 'Jornada registrada en bitácora física',
+    objective: 'Registrar continuidad del desarrollo del robot durante enero.',
+    activities: ['Seguimiento del desarrollo del robot.', 'Registro documental de enero.'],
+    technicalDevelopment:
+      'La entrada se conserva como evidencia de continuidad del desarrollo del robot durante enero.',
+    observations: 'No se agregan detalles técnicos no documentados.',
+    results: 'Se mantiene evidencia de continuidad.',
+    details: 'Entrada de seguimiento visual.',
+    imageRefs: ['Evidencia visual registrada en bitácora física.'],
+    sourcePages: ['PDF sección enero 2026'],
+    imageFile: 'entry-2026-01-12.svg'
+  },
   {
     dateISO: '2026-01-13',
     dateLabel: 'Martes 13 de enero del 2026',
@@ -1046,15 +1214,15 @@ export const entries: Entry[] = [
     time: '08:30-12:30',
     stage: 'Evidencia visual',
     title: 'Registro de orientación izquierda y derecha',
-    objective: 'Conservar evidencia del registro físico.',
-    activities: ['La bitácora física registra referencias a “Izquierda” y “Derecha”.'],
+    objective: 'Conservar registro de orientación o comparación de lados del robot.',
+    activities: ['Registro de referencias “Izquierda” y “Derecha”.', 'Seguimiento visual de orientación, acomodo o comparación.'],
     technicalDevelopment:
-      'La bitácora física registra esta jornada con referencias a “Izquierda” y “Derecha”. Se conserva como evidencia de revisión de orientación, acomodo o comparación de lados del robot, sin agregar detalles técnicos no presentes en el PDF.',
-    observations: 'No se incorporan supuestos técnicos adicionales.',
-    results: 'Se preserva trazabilidad de la revisión de orientación.',
-    details: 'Entrada breve de evidencia textual y visual.',
-    imageRefs: [],
-    sourcePages: sourceJan,
+      'La bitácora física registra esta jornada con referencias a “Izquierda” y “Derecha”. Se conserva como evidencia de revisión de orientación, acomodo o comparación de lados del robot, sin agregar detalles técnicos no presentes en el registro original.',
+    observations: 'No se agregan detalles técnicos adicionales.',
+    results: 'Se conserva el registro de orientación izquierda y derecha.',
+    details: 'Entrada basada en referencias visuales.',
+    imageRefs: ['Evidencia visual con referencias a “Izquierda” y “Derecha”.'],
+    sourcePages: ['PDF sección enero 2026'],
     imageFile: 'entry-2026-01-13.svg'
   },
   {
@@ -1064,43 +1232,71 @@ export const entries: Entry[] = [
     time: '08:30-12:30',
     stage: 'Mejora',
     title: 'Refuerzo de estructura',
-    objective: 'Registrar ajuste estructural.',
-    activities: ['Se quitó para reforzar la estructura.'],
-    technicalDevelopment: 'Texto registrado en la bitácora física: “Se quitó para reforzar la estructura”.',
-    observations: 'No hay detalle técnico adicional en el PDF.',
+    objective: 'Registrar ajuste de refuerzo estructural.',
+    activities: ['Refuerzo de estructura.'],
+    technicalDevelopment: 'Se quitó para reforzar la estructura.',
+    observations:
+      'No se agregan detalles técnicos adicionales porque el registro textual disponible es breve.',
     results: 'Se conserva evidencia de refuerzo estructural.',
-    details: 'Entrada textual breve según registro físico.',
-    imageRefs: [],
-    sourcePages: sourceJan,
+    details: 'Entrada breve basada en texto original.',
+    imageRefs: ['Evidencia visual de refuerzo de estructura.'],
+    sourcePages: ['PDF sección enero 2026'],
     imageFile: 'entry-2026-01-14.svg'
   },
-  createVisualEntry({
+  {
     dateISO: '2026-01-19',
     dateLabel: 'Lunes 19 de enero del 2026',
-    title: 'Jornada registrada en bitácora física',
+    place: 'Laboratorio de Robótica',
+    time: '08:30-12:30',
     stage: 'Evidencia visual',
-    sourcePages: sourceJan,
-    imageFile: 'entry-2026-01-19.svg',
-    text: visualA
-  }),
-  createVisualEntry({
+    title: 'Jornada registrada en bitácora física',
+    objective: 'Conservar evidencia de continuidad del trabajo durante enero.',
+    activities: ['Seguimiento del trabajo.', 'Registro visual de continuidad.'],
+    technicalDevelopment:
+      'La bitácora física conserva esta fecha como evidencia de continuidad del trabajo durante enero.',
+    observations: 'No se agregan detalles técnicos no documentados.',
+    results: 'Se mantiene evidencia visual del seguimiento.',
+    details: 'Entrada visual de enero.',
+    imageRefs: ['Evidencia visual registrada en bitácora física.'],
+    sourcePages: ['PDF sección enero 2026'],
+    imageFile: 'entry-2026-01-19.svg'
+  },
+  {
     dateISO: '2026-01-22',
     dateLabel: 'Jueves 22 de enero del 2026',
-    title: 'Jornada registrada en bitácora física',
+    place: 'Laboratorio de Robótica',
+    time: '08:30-12:30',
     stage: 'Evidencia visual',
-    sourcePages: sourceJan,
-    imageFile: 'entry-2026-01-22.svg',
-    text: visualB
-  }),
-  createVisualEntry({
+    title: 'Jornada registrada en bitácora física',
+    objective: 'Mantener evidencia visual de seguimiento del robot y del proceso de trabajo.',
+    activities: ['Seguimiento del robot.', 'Registro visual del proceso de trabajo.'],
+    technicalDevelopment:
+      'La entrada se mantiene como evidencia visual de seguimiento del robot y del proceso de trabajo.',
+    observations: 'No se agregan detalles técnicos no documentados.',
+    results: 'Se conserva evidencia de seguimiento.',
+    details: 'Entrada de evidencia visual.',
+    imageRefs: ['Evidencia visual registrada en bitácora física.'],
+    sourcePages: ['PDF sección enero 2026'],
+    imageFile: 'entry-2026-01-22.svg'
+  },
+  {
     dateISO: '2026-01-23',
-    dateLabel: 'Lunes 23 de enero del 2026',
-    title: 'Jornada registrada en bitácora física',
+    dateLabel: 'Viernes 23 de enero del 2026',
+    place: 'Laboratorio de Robótica',
+    time: '08:30-12:30',
     stage: 'Evidencia visual',
-    sourcePages: sourceJan,
-    imageFile: 'entry-2026-01-23.svg',
-    text: visualC
-  }),
+    title: 'Jornada registrada en bitácora física',
+    objective: 'Registrar seguimiento documental de enero.',
+    activities: ['Seguimiento documental.', 'Registro visual de continuidad.'],
+    technicalDevelopment:
+      'La bitácora física registra esta jornada como parte del seguimiento documental de enero.',
+    observations: 'No se agregan detalles técnicos no documentados.',
+    results: 'Se conserva registro de continuidad.',
+    details: 'Entrada visual de enero.',
+    imageRefs: ['Evidencia visual registrada en bitácora física.'],
+    sourcePages: ['PDF sección enero 2026'],
+    imageFile: 'entry-2026-01-23.svg'
+  },
   {
     dateISO: '2026-01-26',
     dateLabel: 'Lunes 26 de enero del 2026',
@@ -1110,12 +1306,13 @@ export const entries: Entry[] = [
     title: 'Prueba del autónomo',
     objective: 'Registrar prueba del autónomo.',
     activities: ['Prueba del autónomo.'],
-    technicalDevelopment: 'La bitácora física registra esta jornada como prueba del autónomo.',
-    observations: 'No hay detalle técnico adicional documentado en el PDF.',
-    results: 'Se conserva evidencia de prueba de autonomía.',
-    details: 'Entrada breve con el texto literal disponible.',
-    imageRefs: [],
-    sourcePages: sourceJan,
+    technicalDevelopment: 'Prueba del autónomo.',
+    observations:
+      'No agregar detalles técnicos adicionales si no están documentados textualmente.',
+    results: 'Se conserva la entrada como evidencia de prueba del autónomo.',
+    details: 'Entrada final registrada en enero.',
+    imageRefs: ['Evidencia visual de prueba del autónomo.'],
+    sourcePages: ['PDF sección enero 2026'],
     imageFile: 'entry-2026-01-26.svg'
   }
 ];
