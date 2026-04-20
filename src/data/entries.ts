@@ -96,31 +96,32 @@ export const entries: Entry[] = [
     objective: 'Comprender reglas, dimensiones y sistema de puntuación.',
     activities: ['Análisis del video de presentación del reto VEX Robotics 2025-2026.'],
     technicalDevelopment:
-      'Se revisó el video oficial del reto, los planos del campo, las dimensiones de porterías, bloques y zonas de estacionamiento, así como el sistema de puntuación y bonificaciones. El campo PUSH BACK se documentó como 12 ft x 12 ft, con cuatro porterías, cuatro cargadores, dos espacios de estacionamiento y 88 bloques de plástico.',
+      'Se revisó el video oficial del reto, los planos del campo, las dimensiones de porterías, bloques y zonas de estacionamiento, así como el sistema de puntuación y bonificaciones. PUSH BACK, bases del juego: El campo de juego de PUSH BACK es 12 ft x 12 ft. Está compuesto por cuatro porterías, dos largas y dos centrales, cuatro cargadores, dos por alianza y uno por equipo, y dos espacios de estacionamiento. El juego utiliza 88 bloques de plástico, 44 bloques de cada alianza, contando las precargas. Objetivo del juego: El objetivo de PUSH BACK es trabajar en equipo con la alianza y hacer más puntos que la alianza contraria en dos minutos. El partido se divide en 15 segundos de autónomo y 1 minuto con 45 segundos de pilotaje. Sistema de puntuación: El puntaje se obtiene según la cantidad de bloques anotados, la posición en la que se encuentren y si el robot logra estacionarse. Por cada bloque se obtienen 3 puntos, aunque existen bonificaciones especiales. Bonus por control: En las porterías largas, el bonus es válido solo si los bloques se encuentran en la zona central delimitada por una marca a cada lado. En las porterías centrales, el bonus es válido siempre que se tengan más bloques anotados que la alianza opuesta. Bonus por estacionarse: La parte más importante para que un estacionado sea válido es que el robot no tenga contacto con la pista fuera del área de estacionamiento. La puntuación bonus depende de si se estaciona uno o si se estacionan los dos robots de la alianza.',
     observations:
-      'Se registraron reglas clave de bonus por control y por estacionamiento, además de la regla de validez de bloques dentro de líneas. También se identificaron retos técnicos: doble altura de anotación, fuerza de empuje, extracción del recargador, estacionamiento rápido y buen autónomo.',
+      'Para hacer puntos bonus es importante que los bloques queden completamente dentro de las líneas marcadas en la portería. El bloque más a la izquierda, de color rojo, no está completamente dentro de las líneas de cinta que marcan los límites de la Zona de Control y, por lo tanto, no se consideraría al determinar qué alianza tiene el control del objetivo. Los otros tres bloques, de color verde, están completamente dentro de las líneas de cinta y sí se considerarían. El bloque verde a la derecha está completamente dentro de los límites de la cinta y se consideraría puntuado. Los planos de los elementos del reto serán una parte esencial en el desarrollo del robot, ya que no se tendrá acceso continuo al campo de juego con los elementos oficiales. Por ello, todo el robot será construido con base en estos planos y se desarrollará de la manera más competitiva posible, realizando únicamente ajustes posteriores durante las competencias de prueba, en las que se podrán identificar las mejoras necesarias para que el robot se adapte de forma óptima a la pista. Esto permitirá llegar a los torneos con un robot capaz de afrontar el reto de manera más eficaz.',
     results: 'Comprensión general del reto y definición de requerimientos técnicos iniciales.',
     details:
-      'Los planos del reto se tomaron como base de diseño por falta de acceso continuo al campo oficial, para construir un robot competitivo y ajustar en torneos de prueba.',
+      'Retos del juego: El robot debe ser capaz de acoplarse a dos alturas: la de las porterías largas y la de la portería alta central, aproximadamente 32 cm y 20 cm. Debe tener fuerza suficiente para anotar los bloques, empujar y expulsar bloques de la alianza opuesta. Debe poder sacar los bloques del recargador. Debe contar con una buena estructura para lograr un estacionamiento fácil y rápido, obteniendo el puntaje bonus. Debe contar con una buena programación para la parte autónoma y una adaptación del control que facilite el manejo del piloto.',
     imageRefs: [
-      'Imagen 1.1',
-      'Imagen 1.7',
-      'Imagen 1.8',
-      'Imagen 1.9',
-      'Imagen 1.10',
-      'Imagen 1.11',
-      'Imagen 1.12',
-      'Imagen 1.13',
-      'Imagen 1.2',
-      'Imagen 1.3',
-      'Imagen 1.4',
-      'Imagen 1.5',
-      'Imagen 1.6',
-      'Imagen 2.1',
-      'Imagen 2.2',
-      'Imagen 2.3'
+      'Imagen 1.1 Vista general del campo de juego.',
+      'Imagen 1.7 Puntuación por bloque.',
+      'Imagen 1.8 Bonus por control de las porterías largas.',
+      'Imagen 1.9 Bonus en las porterías centrales.',
+      'Imagen 1.10 Bonus porque uno se estacione.',
+      'Imagen 1.11 Bonus porque se estacionen los dos.',
+      'Imagen 1.12 Regla de bloques dentro de líneas.',
+      'Imagen 1.13 Bloque puntuado.',
+      'Imagen 1.2 Dimensiones de las porterías largas.',
+      'Imagen 1.3 Dimensiones de la portería central.',
+      'Imagen 1.4 Medidas del área de estacionamiento.',
+      'Imagen 1.5 Medidas del cargador.',
+      'Imagen 1.6 Medidas del bloque.',
+      'Imagen 1.7 Medidas y distribución del campo de juego.',
+      'Imagen 2.1 Altura de las porterías largas.',
+      'Imagen 2.2 Altura de la portería central alta.',
+      'Imagen 2.3 Recargador.'
     ],
-    sourcePages: sourceSept,
+    sourcePages: ['PDF sección septiembre 2025 / análisis del reto PUSH BACK'],
     imageFile: 'entry-2025-09-08.svg'
   },
   {
@@ -130,20 +131,27 @@ export const entries: Entry[] = [
     time: '12:30-14:10',
     stage: 'Construcción',
     title: 'Desarmado del robot anterior y organización de equipos',
-    objective: 'Acelerar avance y analizar mecanismos reutilizables.',
+    objective: 'Acelerar el trabajo inicial y analizar mecanismos útiles del robot anterior.',
     activities: [
       'Comenzar el desarmado del robot del reto pasado.',
-      'Analizar mecanismos del robot anterior para PUSH BACK.',
-      'Realizar el prototipo guiado por la poca experiencia en VEX V5.',
-      'Dividir el equipo para trabajar tareas paralelas.'
+      'Analizar el robot anterior para saber si algún mecanismo podría ser útil para el reto PUSH BACK.',
+      'Realizar el prototipo guiado de la temporada debido a la poca experiencia en la categoría VEX V5.',
+      'Dividirse en equipos para poder hacer distintas cosas a la vez y trabajar de manera más eficaz.'
     ],
     technicalDevelopment:
-      'La división por equipos se planteó en pasos no interdependientes: equipo 1 (pasos 1-9), equipo 2 (pasos 10-14), equipo 3 (desarmado y análisis del prototipo anterior).',
+      'Se dividió al equipo en tres grupos. El equipo 1 armó del paso 1 al paso 9 del prototipo guiado. El equipo 2 armó del paso 10 al paso 14. El equipo 3 desarmó el prototipo anterior y revisó su funcionamiento para identificar mecanismos útiles.',
     observations:
-      'Se concluyó que el sistema de elevación del robot anterior podía implementarse de forma similar, por lo que se continuó el armado guiado.',
-    results: 'Organización de trabajo paralela y progreso más rápido del prototipo guiado.',
-    details: 'La jornada consolidó la dinámica por áreas para mejorar eficiencia en tiempos de construcción.',
-    imageRefs: ['Imagen 3.1', 'Imagen 3.2', 'Imagen 3.3'],
+      'Esta división de los pasos fue pensada para que las tareas no fueran interdependientes y se pudiera trabajar de manera más rápida. Se concluyó que el sistema de elevación del robot anterior se podía implementar de una manera similar. Se decidió continuar armando el prototipo guiado debido a la poca experiencia armando robots para VEX Robotics.',
+    results: 'Se avanzó en la organización interna del equipo y se tomó la decisión de usar el prototipo guiado como base de aprendizaje.',
+    details:
+      'La jornada combinó análisis del robot anterior, recuperación de ideas mecánicas y armado del prototipo guiado.',
+    imageRefs: [
+      'Imagen 3.1 Paso 9.',
+      'Imagen 3.2 Paso 13.',
+      'Imagen 3.3 Paso 14.',
+      'Imagen 3.2 El robot siendo desarmado.',
+      'Imagen 3.1 El robot siendo desarmado.'
+    ],
     sourcePages: sourceSept,
     imageFile: 'entry-2025-09-09.svg'
   },
@@ -152,21 +160,24 @@ export const entries: Entry[] = [
     dateLabel: 'Miércoles 10 de septiembre del 2025',
     place: 'Laboratorio de Robótica',
     time: '12:30-14:10',
-    stage: 'Construcción',
+    stage: 'Gestión',
     title: 'Prototipo anterior desarmado y avance del prototipo guiado',
-    objective: 'Cerrar desarmado y continuar avance del prototipo guiado.',
+    objective:
+      'Cerrar el desarmado del robot anterior, continuar el prototipo guiado y gestionar un bloque oficial.',
     activities: [
       'Terminar de desarmar el prototipo del reto pasado.',
       'Continuar con el armado del prototipo guiado hasta el paso 36c.',
-      'Solicitar bloque oficial a Dirección General de CECyTE Michoacán.'
+      'Hacer la solicitud de un bloque de la pista oficial a Dirección General de CECyTE Michoacán.'
     ],
     technicalDevelopment:
-      'Durante el análisis del robot anterior se identificó un tren motriz con mecanismo piñón-cadena como referencia para futuros diseños.',
+      'Se observó el mecanismo utilizado en el tren motriz del robot anterior, que consistía en piñón-cadena.',
     observations:
-      'Se tenía poco material y parte de él estaba dañado por antigüedad de uso, por lo que se planteó gestión de recursos externos.',
-    results: 'Se mantuvo el avance de armado y se inició gestión formal de insumos.',
-    details: 'Entrada de transición entre desarmado, armado guiado y gestión.',
-    imageRefs: ['Imagen 4.1', 'Imagen 4.2', 'Imagen 4.3', 'Imagen 4.4'],
+      'Se tenía poco material y estaba dañado debido a que es el mismo desde hace casi cinco años. Por ello se planteó la posibilidad de solicitar recurso a algunos servidores públicos.',
+    results:
+      'Se terminó de desarmar el prototipo anterior, se avanzó hasta el paso 36c y se inició la gestión de un bloque oficial.',
+    details:
+      'La falta de material y el desgaste del equipo existente comenzaron a influir en la planeación del proyecto.',
+    imageRefs: ['Imagen 4.1 Prototipo completamente desarmado.', 'Imagen 4.2 Paso 19.', 'Imagen 4.3 Paso 25.', 'Imagen 4.4 Paso 36c.'],
     sourcePages: sourceSept,
     imageFile: 'entry-2025-09-10.svg'
   },
@@ -177,13 +188,14 @@ export const entries: Entry[] = [
     time: '12:30-14:10',
     stage: 'Construcción',
     title: 'Avance del prototipo guiado hasta base de elevación',
-    objective: 'Alcanzar la base para el sistema de elevación.',
+    objective: 'Continuar el prototipo guiado y alcanzar la base del sistema de elevación.',
     activities: ['Continuar con el armado del prototipo guiado hasta el paso 68c.'],
-    technicalDevelopment: 'La base del sistema de elevación quedó estructuralmente avanzada.',
-    observations: 'Jornada concentrada en continuidad de ensamble.',
-    results: 'Se llegó al paso 68c del prototipo guiado.',
-    details: 'Registro centrado en evidencia visual del avance por pasos.',
-    imageRefs: ['Imagen 5.1', 'Imagen 5.2', 'Imagen 5.3', 'Imagen 5.4', 'Imagen 5.5'],
+    technicalDevelopment: 'Se avanzó hasta el paso 68c, correspondiente a la base para el sistema de elevación.',
+    observations:
+      'La bitácora registra esta jornada principalmente mediante avances de armado y evidencia visual de pasos.',
+    results: 'Se alcanzó una estructura base útil para estudiar el sistema de elevación.',
+    details: 'Entrada centrada en continuidad de armado y documentación del avance por pasos.',
+    imageRefs: ['Imagen 5.1 Paso 44c.', 'Imagen 5.2 Paso 53c.', 'Imagen 5.3 Paso 54.', 'Imagen 5.4 Paso 61.', 'Imagen 5.5 Paso 68.'],
     sourcePages: sourceSept,
     imageFile: 'entry-2025-09-15.svg'
   },
@@ -194,13 +206,14 @@ export const entries: Entry[] = [
     time: '12:30-14:10',
     stage: 'Construcción',
     title: 'Armado del prototipo guiado hasta el paso 98c',
-    objective: 'Continuar avance del prototipo guiado.',
+    objective: 'Continuar el avance del prototipo guiado.',
     activities: ['Seguir con el armado del prototipo guiado hasta el paso 98c.'],
-    technicalDevelopment: 'Se mantuvo el ensamble progresivo por secuencia de guía.',
-    observations: 'No se registran incidencias técnicas adicionales en esta entrada.',
-    results: 'Se alcanzó el paso 98c.',
-    details: 'Entrada respaldada por evidencia visual del proceso.',
-    imageRefs: ['Imagen 6.1', 'Imagen 6.2', 'Imagen 6.3'],
+    technicalDevelopment: 'Se avanzó en la integración del prototipo guiado hasta el paso 98c.',
+    observations:
+      'La jornada se documenta principalmente mediante evidencia visual de pasos de armado.',
+    results: 'Se alcanzó el paso 98c del prototipo guiado.',
+    details: 'Entrada de seguimiento del proceso de construcción inicial.',
+    imageRefs: ['Imagen 6.1 Paso 70.', 'Imagen 6.2 Paso 87.', 'Imagen 6.3 Paso 98.'],
     sourcePages: sourceSept,
     imageFile: 'entry-2025-09-16.svg'
   },
@@ -211,13 +224,14 @@ export const entries: Entry[] = [
     time: '12:30-14:10',
     stage: 'Construcción',
     title: 'Armado del prototipo guiado hasta el paso 113c',
-    objective: 'Dar continuidad al ensamble guiado.',
+    objective: 'Continuar con la construcción del prototipo guiado.',
     activities: ['Avanzar en el prototipo guiado hasta el paso 113c.'],
-    technicalDevelopment: 'Se integraron más secciones de ensamble según guía de construcción.',
-    observations: 'La entrada se centra en progresión de pasos.',
+    technicalDevelopment:
+      'Se continuó el ensamble del prototipo guiado, documentando pasos intermedios del proceso.',
+    observations: 'La entrada se respalda mediante evidencia visual de armado.',
     results: 'Se alcanzó el paso 113c.',
-    details: 'Evidencia visual de armado por etapas.',
-    imageRefs: ['Imagen 6.4', 'Imagen 6.5', 'Imagen 6.6', 'Imagen 6.7', 'Imagen 6.8', 'Imagen 6.9'],
+    details: 'Continuidad de armado y registro visual del avance.',
+    imageRefs: ['Imagen 6.4 Paso 100.', 'Imagen 6.5 Paso 101.', 'Imagen 6.6 Paso 102.', 'Imagen 6.7 Paso 104.', 'Imagen 6.8 Paso 112.', 'Imagen 6.9 Paso 113.'],
     sourcePages: sourceSept,
     imageFile: 'entry-2025-09-17.svg'
   },
@@ -228,13 +242,13 @@ export const entries: Entry[] = [
     time: '12:30-14:10',
     stage: 'Construcción',
     title: 'Armado del prototipo guiado hasta el paso 132c',
-    objective: 'Continuar secuencia del prototipo guiado.',
+    objective: 'Continuar con el armado del prototipo guiado.',
     activities: ['Avanzar en el prototipo guiado hasta el paso 132c.'],
-    technicalDevelopment: 'Progreso de ensamble documentado por pasos intermedios y finales de la jornada.',
-    observations: 'Sin cambios de diseño reportados en esta fecha.',
-    results: 'Se alcanzó el paso 132c.',
-    details: 'Entrada de continuidad técnica del armado guiado.',
-    imageRefs: ['Imagen 7.1', 'Imagen 7.2', 'Imagen 7.3'],
+    technicalDevelopment: 'Se avanzó hasta el paso 132c del prototipo guiado.',
+    observations: 'La entrada se documenta mediante evidencia visual de pasos.',
+    results: 'Se mantuvo el progreso del prototipo guiado.',
+    details: 'Seguimiento del armado inicial.',
+    imageRefs: ['Imagen 7.1 Paso 116.', 'Imagen 7.2 Paso 116c.', 'Imagen 7.3 Paso 132.'],
     sourcePages: sourceSept,
     imageFile: 'entry-2025-09-23.svg'
   },
@@ -245,18 +259,32 @@ export const entries: Entry[] = [
     time: '12:30-14:10',
     stage: 'Diseño CAD',
     title: 'Instalación de Inventor y avance del prototipo guiado',
-    objective: 'Integrar diseño 3D al flujo del proyecto.',
+    objective: 'Iniciar el trabajo de diseño digital 3D y continuar el avance del prototipo guiado.',
     activities: [
-      'Instalar Inventor Profesional en laptops del equipo.',
-      'Continuar armado del prototipo guiado hasta el paso 162c.',
-      'Realizar oficios de solicitud de recursos a servidores públicos.'
+      'Instalar en las laptops de los integrantes del equipo el programa Inventor Profesional.',
+      'Continuar el armado del prototipo guiado hasta el paso 162c.',
+      'Realizar oficios para la solicitud de recurso a servidores públicos.'
     ],
     technicalDevelopment:
-      'Se incorporó Inventor como herramienta principal de modelado 3D y se mantuvo el armado físico en paralelo.',
-    observations: 'La jornada integró tareas CAD, mecánicas y administrativas.',
-    results: 'Avance simultáneo en armado, diseño digital y gestión de apoyos.',
-    details: 'Sección específica de instalación de Inventor Profesional y progresión por pasos.',
-    imageRefs: ['Imagen 7.5', 'Imagen 7.6', 'Imagen 7.7', 'Imagen 7.8', 'Imagen 7.9', 'Imagen 8.0', 'Imagen 8.1', 'Imagen 8.2', 'Imagen 8.3', 'Imagen 8.4', 'Imagen 8.5'],
+      'Inventor Profesional se utilizará para el desarrollo del diseño digital 3D del robot. La jornada combinó instalación de software, avance físico del prototipo y preparación de oficios de gestión.',
+    observations:
+      'Se comenzó a integrar el diseño CAD como parte formal del proceso de ingeniería del equipo.',
+    results:
+      'Se avanzó hasta el paso 162c y se inició la preparación administrativa para solicitar recursos.',
+    details: 'Subsección: Instalación de Inventor Profesional.',
+    imageRefs: [
+      'Imagen 7.5 Paso 137.',
+      'Imagen 7.6 Paso 140.',
+      'Imagen 7.7 Paso 141.',
+      'Imagen 7.8 Paso 143.',
+      'Imagen 7.9 Paso 148.',
+      'Imagen 8.0 Paso 154.',
+      'Imagen 8.1 Paso 155.',
+      'Imagen 8.2 Paso 162.',
+      'Imagen 8.3 Trabajando en el armado del prototipo guiado.',
+      'Imagen 8.4 Trabajando en el armado.',
+      'Imagen 8.5 Trabajando en el armado.'
+    ],
     sourcePages: sourceSept,
     imageFile: 'entry-2025-09-24.svg'
   },
@@ -267,19 +295,20 @@ export const entries: Entry[] = [
     time: '12:30-14:10',
     stage: 'Organización',
     title: 'Designación de encargados y subencargados',
-    objective: 'Fortalecer organización y roles por área.',
+    objective: 'Mejorar la organización operativa del equipo por áreas de trabajo.',
     activities: [
       'Seguir trabajando en el prototipo guiado.',
-      'Entregar oficio dirigido a la Diputada Local Teresita de Jesús.',
-      'Designar encargados y subencargados por desempeño.'
+      'Entregar el oficio dirigido a la Diputada Local Teresita de Jesús.',
+      'Designar encargados y subencargados de área con base en el desempeño visto hasta la fecha.'
     ],
     technicalDevelopment:
-      'Se formalizaron áreas de Construcción (Roberto, Juan Diego), Diseño (Javier, Rogelio), Programación (Emmanuel, Joshua) y Bitácora (Estefanía, Rafael).',
+      'Se designaron encargados y subencargados de área para avanzar más rápido y tener mejor organización. Construcción: Roberto y Juan Diego. Ellos se encargan de toda la parte física y trabajan en conjunto con los de diseño para buscar hacer el mejor prototipo posible. Su trabajo lo realizarán con las piezas de material VEX. Diseño: Javier y Rogelio. Ellos se encargan de buscar diseños o desarrollarlos para pasárselos a los de construcción y ver la manera de que sean posibles, así como de hacer el robot en diseño 3D. Utilizarán herramientas como Autodesk Inventor, que es un software de diseño asistido por computadora CAD para el modelado mecánico en 3D. Programación: Emmanuel y Joshua. Ellos se encargan de adecuar el control con las necesidades del driver, así como del desarrollo del código para la parte autónoma del robot, usando la app de VEX para programación de los cerebros. Bitácora: Estefanía y Rafael. Ellos se encargan de documentar todo el proceso del desarrollo del prototipo en todas las áreas, por medios físicos como dibujos a mano, y digitales como procesador de textos y fotografías.',
     observations:
-      'Se indicó que Cristian y Alexis serían evaluados en torneos de prueba para designar driver.',
-    results: 'Estructura organizativa definida y armado del robot guiado hasta paso 170c.',
-    details: 'Distribución de responsabilidades para acelerar avance y mejorar coordinación.',
-    imageRefs: ['Imagen 9.0', 'Imagen 9.1', 'Imagen 9.2'],
+      'El resto de los integrantes seguirá como equipo de apoyo. En el caso de Cristian y Alexis, durante los torneos de prueba se verá su desempeño y con base en ello se designará a uno de ellos como driver.',
+    results: 'Se estableció la estructura organizativa del equipo y se armó el robot guiado hasta el paso 170c.',
+    details:
+      'Esta entrada debe conservar claramente la asignación de roles, ya que muestra la organización interna del equipo.',
+    imageRefs: ['Imagen 9.0 Paso 164c.', 'Imagen 9.1 Paso 165.', 'Imagen 9.2 Paso 170c.'],
     sourcePages: sourceSept,
     imageFile: 'entry-2025-09-25.svg'
   },
@@ -290,20 +319,23 @@ export const entries: Entry[] = [
     time: '12:30-14:10',
     stage: 'Gestión',
     title: 'Avance del prototipo guiado, VEXcode V5 y gestión de apoyos',
-    objective: 'Mantener avance técnico y obtener apoyos económicos.',
+    objective:
+      'Mantener avance técnico, instalar herramientas de programación y gestionar recursos económicos.',
     activities: [
       'Avanzar hasta el paso 195c del prototipo guiado.',
-      'Reuniones con funcionarios públicos para presentar el proyecto y solicitar apoyo.',
-      'Instalar VEXcode V5 en el área de programación.'
+      'Realizar reuniones con algunos funcionarios públicos.',
+      'Presentar el proyecto y solicitar apoyo económico.',
+      'Instalar VEXcode V5 por parte de los encargados del área de programación.'
     ],
     technicalDevelopment:
-      'Se registraron reuniones con Mtr. Juan Pablo Herrera, Ing. Marco Alfonso Figueroa y MVZ Francisco Pérez; además de instalar entorno de programación VEXcode V5.',
+      'Se avanzó en el prototipo guiado hasta el paso 195c y se instaló VEXcode V5, herramienta que utilizarán los encargados de programación para desarrollar el código del robot. Reuniones con servidores públicos: Mtr. Juan Pablo Herrera Maldonado, secretario del H. Ayuntamiento de Hidalgo. Ing. Marco Alfonso Figueroa Medina, síndico del H. Ayuntamiento de Hidalgo. MVZ Francisco Pérez Pérez, regidor del H. Ayuntamiento de Hidalgo.',
     observations:
-      'Por falta de piezas para completar el guiado, se detuvo su armado y se inició búsqueda de un diseño propio.',
-    results: 'Se obtuvo respuesta favorable y un apoyo total de $8,900.00 para el proyecto.',
+      'Debido a que no teníamos todas las piezas para armar el prototipo guiado, detuvimos su armado y comenzamos a buscar hacer un diseño propio.',
+    results:
+      'De las reuniones se recibió una respuesta favorable, reuniendo la cantidad de $8,900.00. Tabla de apoyos: Secretario: $2,000.00. Entrega total el 06/10. Síndico: $1,900.00. Entrega total el 06/10. Regidor: $5,000.00. Entrega de $3,000.00 el 06/10 y $2,000.00 el 24/10.',
     details:
-      'Tabla de apoyos registrada: Secretario $2,000; Síndico $1,900; Regidor $5,000 (entregas 06/10 y 24/10).',
-    imageRefs: ['Imagen 10.1', 'Imagen 10.2'],
+      'Esta entrada combina avance técnico, instalación de software y gestión de recursos para poder continuar el proyecto.',
+    imageRefs: ['Imagen 10.1 Reunión con el Mtr. Juan Pablo Herrera.', 'Imagen 10.2 Reunión con MVZ Francisco Pérez.'],
     sourcePages: sourceSept,
     imageFile: 'entry-2025-09-29.svg'
   },
@@ -314,17 +346,26 @@ export const entries: Entry[] = [
     time: '12:30-15:00',
     stage: 'Diseño',
     title: 'Diagramas del nuevo diseño para el regional de Lagunillas',
-    objective: 'Preparar diseño propio para torneo regional de prueba.',
+    objective: 'Plantear un diseño propio para presentarlo en el primer torneo regional de prueba.',
     activities: [
-      'Comenzar diagramas del nuevo diseño.',
+      'Comenzar a hacer los diagramas del nuevo diseño.',
+      'Preparar el diseño que será presentado en el primer torneo regional de prueba en el CECyTEM 24 de Lagunillas.',
       'Realizar pruebas de programación.'
     ],
     technicalDevelopment:
-      'El diseño mantuvo base y rampa del prototipo guiado por tiempo disponible, modificando elevación y agarre de bloques con rodillos de ligas y transmisión piñón-cadena 1:1 con un motor.',
-    observations: 'La propuesta se enfocó en una solución viable para competir en Lagunillas.',
-    results: 'Se documentó boceto mecánico del nuevo enfoque de robot.',
-    details: 'Se registró explicación gráfica del mecanismo para construcción posterior.',
-    imageRefs: ['Imagen 11.1', 'Imagen 11.2', 'Imagen 11.3', 'Imagen 11.4', 'Imagen 11.5'],
+      'Se comenzaron a hacer los diagramas del diseño nuevo, el cual consistía en mantener la base y la rampa igual que en el prototipo guiado, debido a que quedaba poco tiempo para el primer torneo regional de prueba en el CECyTEM 24 de Lagunillas. Solo se cambiaba el sistema de elevación y agarre de los bloques.',
+    observations:
+      'El mecanismo usa rodillos de ligas para la recolección y elevación de los bloques. Usa una transmisión de movimiento de piñón-cadena con una relación 1:1, con un solo motor, y las cadenas van intercalando de lado.',
+    results: 'Se obtuvo un diseño preliminar para continuar con la construcción y pruebas antes del regional.',
+    details:
+      'Esta entrada debe conservar la explicación gráfica del mecanismo y el razonamiento de conservar base/rampa por falta de tiempo.',
+    imageRefs: [
+      'Imagen 11.1 Todos trabajando.',
+      'Imagen 11.2 Pruebas de programación.',
+      'Imagen 11.3 Dibujando el boceto del robot.',
+      'Imagen 11.4 Vista general del robot.',
+      'Imagen 11.5 Explicación gráfica del mecanismo.'
+    ],
     sourcePages: sourceSept,
     imageFile: 'entry-2025-09-30.svg'
   },
