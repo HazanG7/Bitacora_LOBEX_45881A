@@ -51,6 +51,8 @@ const tagIcons: Record<string, LucideIcon> = {
   'Diseño CAD': Layers3,
   Diseño: Layers3,
   Organización: Users,
+  Iteración: Layers3,
+  Ajustes: ShieldCheck,
   Pruebas: ShieldCheck,
   Autónomo: Code2
 };

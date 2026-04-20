@@ -11,7 +11,9 @@ export type Stage =
   | 'Autónomo'
   | 'Diseño'
   | 'Pruebas'
-  | 'Organización';
+  | 'Organización'
+  | 'Iteración'
+  | 'Ajustes';
 
 export type Entry = {
   dateISO: string;
@@ -377,20 +379,32 @@ export const entries: Entry[] = [
     time: '12:30-14:10',
     stage: 'Diseño CAD',
     title: 'Diseño 3D, impresión de piezas y comienzo del diseño propuesto',
-    objective: 'Validar diseño mecánico en CAD e iniciar construcción.',
+    objective:
+      'Avanzar en el diseño 3D, impresión de piezas y comienzo de construcción del diseño propuesto.',
     activities: [
-      'Diseñar en 3D en SOLIDWORKS el bloque del reto y otras piezas.',
-      'Imprimir piezas diseñadas.',
-      'Probar diseño 3D del robot en Inventor.',
-      'Armar pista base para cálculo de distancias.',
-      'Comenzar armado del diseño propuesto.'
+      'Hacer el diseño en 3D en SOLIDWORKS del bloque que se usa en el reto con base en los planos, así como otras piezas.',
+      'Imprimir las piezas diseñadas.',
+      'Hacer pruebas del diseño 3D del robot en Inventor.',
+      'Armar la pista base para poder calcular distancias.',
+      'Comenzar a armar el diseño propuesto.'
     ],
     technicalDevelopment:
-      'La jornada integró CAD (SolidWorks e Inventor), impresión 3D y construcción física inicial del mecanismo.',
-    observations: 'No se contaba con ejes suficientes y se detuvo la construcción del mecanismo propuesto.',
-    results: 'Se conservó avance digital y de prototipado para iterar el diseño.',
-    details: 'Evidencia de diseño de piezas, bloque y pruebas de cómo quedaría el mecanismo.',
-    imageRefs: ['Imagen 12.1', 'Imagen 12.2', 'Imagen 12.3', 'Imagen 12.7', 'Imagen 12.6', 'Imagen 12.4', 'Imagen 12.5'],
+      'Se trabajó en el diseño 3D del bloque y otras piezas. También se hicieron pruebas del diseño del robot en Inventor y se inició la construcción del mecanismo propuesto. El trabajo integró el uso de SOLIDWORKS para el modelado del bloque con base en los planos del reto, impresión 3D de piezas y pruebas del diseño del robot en Autodesk Inventor.',
+    observations:
+      'No se contaba con los ejes suficientes, por lo que se detuvo la construcción del mecanismo propuesto.',
+    results:
+      'Se avanzó en CAD, impresión 3D y pruebas preliminares, pero la construcción física quedó limitada por falta de ejes.',
+    details:
+      'La jornada integra SolidWorks, Inventor, impresión 3D y preparación de pista base para cálculos de distancia.',
+    imageRefs: [
+      'Imagen 12.1 Diseño de piezas.',
+      'Imagen 12.2 Comienzo del diseño del bloque.',
+      'Imagen 12.3 Diseño completo del bloque.',
+      'Imagen 12.7 Impresión 3D.',
+      'Imagen 12.6 Diseño 3D en Inventor.',
+      'Imagen 12.4 Construcción del mecanismo.',
+      'Imagen 12.5 Pruebas de cómo quedará el mecanismo.'
+    ],
     sourcePages: sourceOct,
     imageFile: 'entry-2025-10-01.svg'
   },
@@ -399,22 +413,29 @@ export const entries: Entry[] = [
     dateLabel: 'Jueves 02 de octubre del 2025',
     place: 'Laboratorio de Robótica',
     time: '12:30-15:30',
-    stage: 'Construcción',
+    stage: 'Iteración',
     title: 'Cambio de diseño, bloque oficial y mecanismo Tank Tread',
-    objective: 'Resolver contratiempos del diseño anterior.',
+    objective: 'Resolver contratiempos del diseño anterior y validar un nuevo mecanismo.',
     activities: [
-      'Cambiar el diseño por contratiempos previos.',
-      'Armar diseño nuevo.',
-      'Recibir bloque oficial del reto.',
-      'Hacer pruebas con el diseño nuevo.',
-      'Continuar pruebas CAD en Inventor.'
+      'Cambiar el diseño, ya que se presentaron contratiempos con el diseño anterior.',
+      'Armar el diseño nuevo.',
+      'Recibir el bloque oficial del reto.',
+      'Hacer pruebas con el nuevo diseño.',
+      'Continuar con las pruebas del diseño en 3D en Inventor.'
     ],
     technicalDevelopment:
-      'Se tomó de nuevo la base del prototipo guiado, integrando elevación por Tank Tread y recolección por rodillo de ligas construido con engranes de 24 dientes, eje, separadores, ligas y opresores. La transmisión motor-banda-rodillo se resolvió con cadena-piñón usando un solo motor.',
-    observations: 'Las pruebas del mecanismo de elevación fueron satisfactorias.',
-    results: 'El diseño nuevo resultó funcional para continuar iteración.',
-    details: 'Entrada centrada en explicación mecánica del cambio de diseño.',
-    imageRefs: ['Imagen 13.1', 'Imagen 13.2', 'Imagen 13.3'],
+      'Este diseño toma la base del prototipo guiado nuevamente. Se utiliza un mecanismo de elevación con cadena de Tank Tread y uno de recolección de bloques con un rodillo de ligas que se armó a base de dos engranes de 24 dientes, un eje, separadores, ligas y opresores. Para la transmisión del movimiento del motor al inicio de la banda, a la parte superior y al rodillo recolector, se utilizó cadena-piñón. Todo esto se mueve a la par con ayuda de un solo motor.',
+    observations:
+      'Las pruebas que se realizaron al mecanismo de elevación tuvieron resultados satisfactorios.',
+    results:
+      'Se logró validar un diseño nuevo con mecanismo de elevación por Tank Tread y rodillo de ligas.',
+    details:
+      'Esta entrada debe conservar la descripción del mecanismo, la recepción del bloque oficial y el cambio de diseño provocado por contratiempos del diseño anterior.',
+    imageRefs: [
+      'Imagen 13.1 Diseño nuevo.',
+      'Imagen 13.2 Explicación.',
+      'Imagen 13.3 Pruebas de funcionamiento del mecanismo de elevación por cadena de Tank Tread.'
+    ],
     sourcePages: sourceOct,
     imageFile: 'entry-2025-10-02.svg'
   },
@@ -423,16 +444,18 @@ export const entries: Entry[] = [
     dateLabel: 'Viernes 03 de octubre del 2025',
     place: 'Laboratorio de Robótica',
     time: '13:20-15:30',
-    stage: 'Construcción',
+    stage: 'Pruebas',
     title: 'Pruebas separadas de mecanismos y diseño 3D',
-    objective: 'Probar subsistemas antes de integración.',
-    activities: ['Armar el diseño nuevo.', 'Continuar pruebas de diseño 3D en Inventor.'],
+    objective: 'Probar los mecanismos por separado antes de integrarlos completamente al robot.',
+    activities: ['Armar el diseño nuevo.', 'Continuar con las pruebas del diseño en 3D en Inventor.'],
     technicalDevelopment:
-      'Ninguno de los mecanismos se fijó al robot; se montaron y probaron por separado para validar funcionamiento parcial.',
-    observations: 'Se priorizó validación aislada de recolección y elevación.',
-    results: 'Evidencia útil para decisiones de integración posterior.',
-    details: 'Bitácora con evidencia de armado y pruebas parciales.',
-    imageRefs: ['Imagen 14.0', 'Imagen 14.1'],
+      'Se probó el mecanismo de recolección y se continuó con las pruebas de diseño 3D.',
+    observations:
+      'Ninguno de los mecanismos se fijó al robot, por lo que se pusieron por separado y se probaron por separado.',
+    results:
+      'Se obtuvo información preliminar sobre el funcionamiento de los mecanismos antes de su integración.',
+    details: 'La jornada se centró en prueba aislada de mecanismos y validación CAD.',
+    imageRefs: ['Imagen 14.0 Armado y prueba del mecanismo de recolección.', 'Imagen 14.1 Se siguió con las pruebas de diseño 3D.'],
     sourcePages: sourceOct,
     imageFile: 'entry-2025-10-03.svg'
   },
@@ -443,15 +466,22 @@ export const entries: Entry[] = [
     time: '13:20-15:30',
     stage: 'Programación',
     title: 'Armado del diseño nuevo y sensor giroscópico',
-    objective: 'Integrar sensor para mejorar autónomo.',
-    activities: ['Armar diseño nuevo.', 'Hacer pruebas del diseño nuevo.'],
+    objective: 'Armar el diseño nuevo, probar mecanismos e integrar sensor giroscópico.',
+    activities: ['Armar el diseño nuevo.', 'Hacer pruebas del diseño nuevo.'],
     technicalDevelopment:
-      'Se incorporó Gyroscope Sensor V1.0 para mejorar movimiento autónomo y retroalimentación del robot en un eje de rotación.',
+      'Gyroscope Sensor V1.0 mejora el movimiento autónomo y la retroalimentación de un robot VEX al detectar la rotación de un robot desde su origen en un solo eje. Este sensor se puso en el robot para ser usado en el desarrollo de los programas autónomos de los MATCHS HEAD-TO-HEAD y en los AUTONOMOUS CODING SKILLS MATCH.',
     observations:
-      'El sensor se destinó al desarrollo de programas autónomos de MATCHS HEAD-TO-HEAD y AUTONOMOUS CODING SKILLS MATCH.',
-    results: 'Diseño probado con integración de sensor giroscópico.',
-    details: 'Se documentaron armado de banda, conexión del sensor y pruebas mecánicas.',
-    imageRefs: ['Imagen 15.0', 'Imagen 15.1', 'Imagen 15.2', 'Imagen 15.3'],
+      'La conexión del sensor giroscópico se documentó como parte del desarrollo de programas autónomos.',
+    results:
+      'El robot quedó preparado para integrar el giroscopio en rutinas autónomas y de skills.',
+    details:
+      'La jornada incluyó armado de mecanismos, armado de la banda, conexión de giroscopio y pruebas.',
+    imageRefs: [
+      'Imagen 15.0 Armado de los mecanismos.',
+      'Imagen 15.1 Armado de la banda.',
+      'Imagen 15.2 Conexión del sensor giroscópico.',
+      'Imagen 15.3 Pruebas de los mecanismos.'
+    ],
     sourcePages: sourceOct,
     imageFile: 'entry-2025-10-04.svg'
   },
@@ -460,15 +490,25 @@ export const entries: Entry[] = [
     dateLabel: 'Lunes 06 de octubre del 2025',
     place: 'Laboratorio de Robótica',
     time: '12:30-15:30',
-    stage: 'Diseño CAD',
+    stage: 'Pruebas',
     title: 'Diseño 3D, porterías simuladas y ajustes en base',
-    objective: 'Probar desempeño en condiciones simuladas.',
-    activities: ['Comenzar armado del diseño en 3D.', 'Simular pruebas recreando altura y forma de porterías.'],
-    technicalDevelopment: 'Se recrearon porterías para pruebas finales y se aplicaron ajustes en base y zona de llantas.',
-    observations: 'Se enfocó la jornada en afinación previa al regional.',
-    results: 'Robot mejor ajustado para condición de cancha.',
-    details: 'Entrada de simulación, prueba y corrección de base.',
-    imageRefs: ['Imagen 16.0', 'Imagen 16.1', 'Imagen 16.2', 'Imagen 16.3'],
+    objective: 'Simular condiciones del campo y ajustar la base del robot.',
+    activities: [
+      'Comenzar el armado del diseño en 3D.',
+      'Simular pruebas de las porterías recreando altura y forma de las porterías.'
+    ],
+    technicalDevelopment:
+      'Se realizaron pruebas finales del robot con porterías simuladas y se aplicaron ajustes en la base.',
+    observations:
+      'Se hicieron ajustes en la base y junto a las llantas para mejorar el comportamiento del robot.',
+    results: 'El robot quedó mejor alineado a condiciones aproximadas del campo.',
+    details: 'La entrada documenta diseño 3D, simulación de porterías y ajustes físicos.',
+    imageRefs: [
+      'Imagen 16.0 Diseño 3D.',
+      'Imagen 16.1 Pruebas finales del robot con porterías simuladas.',
+      'Imagen 16.2 Ajustes en la base.',
+      'Imagen 16.3 Ajustes en la base junto a las llantas.'
+    ],
     sourcePages: sourceOct,
     imageFile: 'entry-2025-10-06.svg'
   },
@@ -477,19 +517,23 @@ export const entries: Entry[] = [
     dateLabel: 'Martes 07 de octubre del 2025',
     place: 'Laboratorio de Robótica',
     time: '12:30-16:30',
-    stage: 'Mejora',
+    stage: 'Ajustes',
     title: 'Últimos ajustes antes del regional en Lagunillas',
-    objective: 'Eliminar inestabilidad en estructura alta.',
-    activities: ['Hacer últimos ajustes antes del regional.', 'Realizar pruebas en cancha con simulaciones de altura.'],
-    technicalDevelopment:
-      'Se colocó un separador porque la estructura alta presentaba inestabilidad e inclinación al centro; con ejes, separadores y opresores se buscó separación uniforme.',
-    observations: 'La corrección se validó en pruebas previas al torneo.',
-    results: 'Robot listo para regional de prueba.',
-    details: 'Registro de ajuste crítico para estabilidad.',
-    imageRefs: ['Imagen 17.0', 'Imagen 17.1'],
+    objective: 'Realizar últimos ajustes antes del regional en el CECyTEM 24 Lagunillas.',
+    activities: [
+      'Hacer últimos ajustes antes del regional.',
+      'Realizar pruebas en la cancha con simulaciones de alturas.'
+    ],
+    technicalDevelopment: 'Se colocó un soporte de separación.',
+    observations:
+      'Este soporte de separación se puso ya que, al ser una estructura alta, presentaba una inestabilidad y una inclinación hacia el centro. Por ello se decidió colocar un separador, que con ayuda de los ejes separadores y opresores mantendrá una separación uniforme.',
+    results: 'El robot quedó con mejor estabilidad antes del torneo regional.',
+    details: 'La entrada documenta el ajuste estructural previo al primer regional de prueba.',
+    imageRefs: ['Imagen 17.0 Colocación de un separador.', 'Imagen 17.1 Pruebas en cancha.'],
     sourcePages: sourceOct,
     imageFile: 'entry-2025-10-07.svg'
   },
+
   {
     dateISO: '2025-10-08-regional',
     dateLabel: 'Miércoles 08 de octubre del 2025',
