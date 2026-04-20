@@ -53,6 +53,7 @@ const tagIcons: Record<string, LucideIcon> = {
   Organización: Users,
   Iteración: Layers3,
   Ajustes: ShieldCheck,
+  'Robot 2.0': Layers3,
   Pruebas: ShieldCheck,
   Autónomo: Code2
 };
