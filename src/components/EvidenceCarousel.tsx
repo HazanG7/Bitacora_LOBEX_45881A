@@ -1,5 +1,6 @@
-import { useMemo, useState } from 'react';
-import { Camera, ChevronLeft, ChevronRight } from 'lucide-react';
+import { useMemo, useState } from "react";
+import { ChevronLeft, ChevronRight, ImageIcon } from "lucide-react";
+import { evidenceAssets } from "../data/evidenceAssets";
 
 type EvidenceCarouselProps = {
   imageRefs?: string[];
@@ -7,92 +8,119 @@ type EvidenceCarouselProps = {
   title: string;
 };
 
-const placeholderImage = `${import.meta.env.BASE_URL}assets/svg/evidence-placeholder.svg`;
-const asAsset = (fileName: string) => `${import.meta.env.BASE_URL}assets/svg/${fileName}`;
+const asset = (path: string) => `${import.meta.env.BASE_URL}${path}`;
 
-const getEvidenceImage = (ref: string, fallback?: string) => {
-  void ref;
-  return fallback || placeholderImage;
-};
+const placeholder = asset("assets/svg/evidence-placeholder.svg");
 
-export default function EvidenceCarousel({ imageRefs, imageFile, title }: EvidenceCarouselProps) {
+function getEvidenceImage(ref: string, imageFile?: string) {
+  const mapped = evidenceAssets[ref];
+
+  if (mapped) {
+    return asset(mapped);
+  }
+
+  if (imageFile) {
+    if (imageFile.startsWith("http")) return imageFile;
+    if (imageFile.startsWith("/")) return `${import.meta.env.BASE_URL}${imageFile.slice(1)}`;
+    return asset(imageFile);
+  }
+
+  return placeholder;
+}
+
+export default function EvidenceCarousel({
+  imageRefs,
+  imageFile,
+  title,
+}: EvidenceCarouselProps) {
   const slides = useMemo(() => {
-    if (!imageRefs?.length) return [];
-    const fallback = imageFile ? asAsset(imageFile) : undefined;
-    return imageRefs.map((ref) => ({ ref, src: getEvidenceImage(ref, fallback) }));
-  }, [imageFile, imageRefs]);
+    if (!imageRefs || imageRefs.length === 0) return [];
+
+    return imageRefs.map((ref) => ({
+      ref,
+      src: getEvidenceImage(ref, imageFile),
+    }));
+  }, [imageRefs, imageFile]);
 
   const [current, setCurrent] = useState(0);
 
-  if (!slides.length) return null;
+  if (slides.length === 0) return null;
 
-  const hasMultiple = slides.length > 1;
-  const currentSlide = slides[current] ?? slides[0];
+  const total = slides.length;
+  const active = slides[current];
 
-  const goPrev = () => setCurrent((prev) => (prev - 1 + slides.length) % slides.length);
-  const goNext = () => setCurrent((prev) => (prev + 1) % slides.length);
+  const goPrev = () => {
+    setCurrent((value) => (value === 0 ? total - 1 : value - 1));
+  };
+
+  const goNext = () => {
+    setCurrent((value) => (value === total - 1 ? 0 : value + 1));
+  };
 
   return (
-    <section className="rounded-3xl border border-white/10 bg-white/[0.03] p-4 md:p-5">
-      <div className="mb-3 flex items-center justify-between gap-3">
-        <p className="text-xs font-bold uppercase tracking-widest text-red-300">Evidencias</p>
+    <section className="mt-6 overflow-hidden rounded-3xl border border-white/10 bg-black/25">
+      <div className="flex items-center justify-between border-b border-white/10 px-4 py-3">
+        <div className="flex items-center gap-2">
+          <ImageIcon className="h-4 w-4 text-red-300" />
+          <p className="text-sm font-bold text-white">Evidencias de bitácora</p>
+        </div>
         <p className="text-xs text-zinc-400">
-          Evidencia {current + 1} de {slides.length}
+          Evidencia {current + 1} de {total}
         </p>
       </div>
 
-      <div className="overflow-hidden rounded-2xl border border-white/10 bg-black/30">
+      <div className="relative">
         <img
-          src={currentSlide.src}
-          alt={currentSlide.ref || `Evidencia visual: ${title}`}
-          className="h-52 w-full object-cover md:h-72"
+          src={active.src}
+          alt={`${title}: ${active.ref}`}
+          className="h-64 w-full bg-[#080A0F] object-contain p-2 md:h-[420px]"
+          loading="lazy"
         />
 
-        <div className="border-t border-white/10 bg-black/40 p-4">
-          <p className="inline-flex items-center gap-2 text-xs uppercase tracking-widest text-zinc-400">
-            <Camera className="h-4 w-4 text-red-300" />
-            Referencia visual
-          </p>
-          <p className="mt-2 whitespace-pre-line text-sm leading-6 text-zinc-200">{currentSlide.ref}</p>
-        </div>
-      </div>
-
-      {hasMultiple && (
-        <div className="mt-4 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-          <div className="flex items-center gap-2">
+        {total > 1 && (
+          <>
             <button
               type="button"
-              onClick={goPrev}
               aria-label="Evidencia anterior"
-              className="inline-flex min-h-10 min-w-10 items-center justify-center rounded-xl border border-white/15 bg-white/5 text-zinc-200 transition hover:bg-white/10"
+              onClick={goPrev}
+              className="absolute left-3 top-1/2 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-white/10 bg-black/70 text-white backdrop-blur transition hover:bg-red-600"
             >
               <ChevronLeft className="h-5 w-5" />
             </button>
+
             <button
               type="button"
-              onClick={goNext}
               aria-label="Evidencia siguiente"
-              className="inline-flex min-h-10 min-w-10 items-center justify-center rounded-xl border border-white/15 bg-white/5 text-zinc-200 transition hover:bg-white/10"
+              onClick={goNext}
+              className="absolute right-3 top-1/2 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-white/10 bg-black/70 text-white backdrop-blur transition hover:bg-red-600"
             >
               <ChevronRight className="h-5 w-5" />
             </button>
-          </div>
+          </>
+        )}
+      </div>
 
-          <div className="flex flex-wrap items-center gap-2">
+      <div className="border-t border-white/10 p-4">
+        <p className="text-sm leading-6 text-zinc-200">{active.ref}</p>
+
+        {total > 1 && (
+          <div className="mt-4 flex flex-wrap justify-center gap-2">
             {slides.map((slide, index) => (
               <button
                 key={`${slide.ref}-${index}`}
                 type="button"
-                onClick={() => setCurrent(index)}
                 aria-label={`Ir a evidencia ${index + 1}`}
-                className={`h-2.5 w-2.5 rounded-full transition ${
-                  index === current ? 'bg-red-400' : 'bg-zinc-600 hover:bg-zinc-400'
+                onClick={() => setCurrent(index)}
+                className={`h-2.5 rounded-full transition ${
+                  index === current
+                    ? "w-8 bg-red-500"
+                    : "w-2.5 bg-white/25 hover:bg-white/50"
                 }`}
               />
             ))}
           </div>
-        </div>
-      )}
+        )}
+      </div>
     </section>
   );
 }
