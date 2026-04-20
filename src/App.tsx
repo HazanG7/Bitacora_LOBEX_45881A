@@ -50,6 +50,7 @@ const tagIcons: Record<string, LucideIcon> = {
   'Evidencia visual': ImageIcon,
   'Diseño CAD': Layers3,
   Diseño: Layers3,
+  Organización: Users,
   Pruebas: ShieldCheck,
   Autónomo: Code2
 };
