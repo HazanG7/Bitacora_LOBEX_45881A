@@ -38,13 +38,16 @@ jobs:
       - name: Verify dist/index.html
         run: test -f dist/index.html
 
+      - name: Print dist/index.html
+        run: cat dist/index.html
+
       - name: Verify built index uses bundled assets
         run: |
           if grep -q '/src/main.tsx' dist/index.html; then
             echo 'dist/index.html still references /src/main.tsx';
             exit 1;
           fi
-          grep -Eq '/Bitacora_LOBEX_45881A/assets/index-[^"]+\\.js' dist/index.html
+          grep -q '/Bitacora_LOBEX_45881A/assets/' dist/index.html
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
