@@ -252,7 +252,11 @@ export default function LobexDigitalNotebook() {
                       </div>
                     </div>
 
-                    <EvidenceCarousel imageRefs={entry.imageRefs} imageFile={entry.imageFile} title={entry.title} />
+                    <EvidenceCarousel
+                      imageRefs={entry.imageRefs}
+                      imageFile={entry.imageFile}
+                      title={entry.title}
+                    />
 
                     <div className="rounded-2xl border border-white/10 bg-black/20 p-4">
                       <p className="mb-2 text-xs font-bold uppercase tracking-widest text-red-300">Fuentes</p>
