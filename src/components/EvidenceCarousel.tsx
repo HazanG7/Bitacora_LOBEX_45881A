@@ -1,8 +1,13 @@
 import { useMemo, useState } from "react";
 import { ChevronLeft, ChevronRight, ImageIcon } from "lucide-react";
-import { evidenceAssets } from "../data/evidenceAssets";
+
+type EvidenceItem = {
+  caption: string;
+  src: string;
+};
 
 type EvidenceCarouselProps = {
+  evidence?: EvidenceItem[];
   imageRefs?: string[];
   imageFile?: string;
   title: string;
@@ -12,39 +17,53 @@ const asset = (path: string) => `${import.meta.env.BASE_URL}${path}`;
 
 const placeholder = asset("assets/svg/evidence-placeholder.svg");
 
-function getEvidenceImage(ref: string, imageFile?: string) {
-  const mapped = evidenceAssets[ref];
-
-  if (mapped) {
-    return asset(mapped);
-  }
-
-  if (imageFile) {
-    if (imageFile.startsWith("http")) return imageFile;
-    if (imageFile.startsWith("/")) return `${import.meta.env.BASE_URL}${imageFile.slice(1)}`;
-    return asset(imageFile);
-  }
-
-  return placeholder;
+function resolveFallbackImage(imageFile?: string) {
+  if (!imageFile) return placeholder;
+  if (imageFile.startsWith("http")) return imageFile;
+  if (imageFile.startsWith("/")) return `${import.meta.env.BASE_URL}${imageFile.slice(1)}`;
+  return asset(imageFile);
 }
 
 export default function EvidenceCarousel({
+  evidence,
   imageRefs,
   imageFile,
   title,
 }: EvidenceCarouselProps) {
   const slides = useMemo(() => {
-    if (!imageRefs || imageRefs.length === 0) return [];
+    if (evidence && evidence.length > 0) {
+      return evidence.map((item) => ({
+        caption: item.caption,
+        src: item.src ? asset(item.src) : placeholder,
+      }));
+    }
 
-    return imageRefs.map((ref) => ({
-      ref,
-      src: getEvidenceImage(ref, imageFile),
-    }));
-  }, [imageRefs, imageFile]);
+    if (imageRefs && imageRefs.length > 0) {
+      const fallback = resolveFallbackImage(imageFile);
+      return imageRefs.map((ref) => ({
+        caption: ref,
+        src: fallback || placeholder,
+      }));
+    }
+
+    if (imageFile) {
+      return [
+        {
+          caption: title,
+          src: resolveFallbackImage(imageFile),
+        },
+      ];
+    }
+
+    return [
+      {
+        caption: title,
+        src: placeholder,
+      },
+    ];
+  }, [evidence, imageRefs, imageFile, title]);
 
   const [current, setCurrent] = useState(0);
-
-  if (slides.length === 0) return null;
 
   const total = slides.length;
   const active = slides[current];
@@ -71,8 +90,8 @@ export default function EvidenceCarousel({
 
       <div className="relative">
         <img
-          src={active.src}
-          alt={`${title}: ${active.ref}`}
+          src={active.src || placeholder}
+          alt={`${title}: ${active.caption}`}
           className="h-64 w-full bg-[#080A0F] object-contain p-2 md:h-[420px]"
           loading="lazy"
         />
@@ -101,13 +120,13 @@ export default function EvidenceCarousel({
       </div>
 
       <div className="border-t border-white/10 p-4">
-        <p className="text-sm leading-6 text-zinc-200">{active.ref}</p>
+        <p className="text-sm leading-6 text-zinc-200">{active.caption}</p>
 
         {total > 1 && (
           <div className="mt-4 flex flex-wrap justify-center gap-2">
             {slides.map((slide, index) => (
               <button
-                key={`${slide.ref}-${index}`}
+                key={`${slide.caption}-${index}`}
                 type="button"
                 aria-label={`Ir a evidencia ${index + 1}`}
                 onClick={() => setCurrent(index)}
