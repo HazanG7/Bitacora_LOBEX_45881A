@@ -130,7 +130,7 @@ export default function LobexDigitalNotebook() {
             </motion.div>
 
             <div className="rounded-[2rem] border border-white/10 bg-white/[0.06] p-5 shadow-2xl shadow-black/40 backdrop-blur">
-              <img src={notebookImages.teamPhoto} alt="Equipo LOBEX" className="w-full rounded-2xl border border-white/10" />
+              <img src={notebookImages.teamPhoto} alt="Equipo LOBEX en VEX Robotics World Championship 2025" className="w-full rounded-2xl border border-white/10 object-contain" />
             </div>
           </div>
 
@@ -252,7 +252,12 @@ export default function LobexDigitalNotebook() {
                       </div>
                     </div>
 
-                    <EvidenceCarousel imageRefs={entry.imageRefs} imageFile={entry.imageFile} title={entry.title} />
+                    <EvidenceCarousel
+                      evidence={entry.evidence}
+                      imageRefs={entry.imageRefs}
+                      imageFile={entry.imageFile}
+                      title={entry.title}
+                    />
 
                     <div className="rounded-2xl border border-white/10 bg-black/20 p-4">
                       <p className="mb-2 text-xs font-bold uppercase tracking-widest text-red-300">Fuentes</p>
