@@ -12,10 +12,39 @@ const asset = (path: string) => `${import.meta.env.BASE_URL}${path}`;
 
 const placeholder = asset("assets/svg/evidence-placeholder.svg");
 
-function getEvidenceImage(ref: string, imageFile?: string) {
-  const mapped = evidenceAssets[ref];
+const normalize = (value: string) =>
+  value
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .replace(/[^a-z0-9]+/g, " ")
+    .trim();
+
+function findEvidencePath(ref: string) {
+  const exact = evidenceAssets[ref];
+  if (exact) return exact;
+
+  const target = normalize(ref);
+  if (!target) return null;
+
+  const match = Object.entries(evidenceAssets).find(([key]) => {
+    const normalizedKey = normalize(key);
+    return (
+      normalizedKey === target ||
+      normalizedKey.includes(target) ||
+      target.includes(normalizedKey)
+    );
+  });
+
+  return match?.[1] ?? null;
+}
+
+function resolveImageSrc(ref: string, imageFile?: string) {
+  const mapped = findEvidencePath(ref);
 
   if (mapped) {
+    if (mapped.startsWith("http")) return mapped;
+    if (mapped.startsWith("/")) return `${import.meta.env.BASE_URL}${mapped.slice(1)}`;
     return asset(mapped);
   }
 
@@ -38,7 +67,7 @@ export default function EvidenceCarousel({
 
     return imageRefs.map((ref) => ({
       ref,
-      src: getEvidenceImage(ref, imageFile),
+      src: resolveImageSrc(ref, imageFile),
     }));
   }, [imageRefs, imageFile]);
 
