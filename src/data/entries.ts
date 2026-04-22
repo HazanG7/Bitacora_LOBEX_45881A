@@ -16,6 +16,11 @@ export type Stage =
   | 'Ajustes'
   | 'Robot 2.0';
 
+export type EvidenceItem = {
+  caption: string;
+  src: string;
+};
+
 export type Entry = {
   dateISO: string;
   dateLabel: string;
@@ -30,6 +35,7 @@ export type Entry = {
   results: string;
   details: string;
   imageRefs: string[];
+  evidence?: EvidenceItem[];
   sourcePages: string[];
   imageFile?: string;
 };
@@ -88,7 +94,7 @@ function createVisualEntry({
   };
 }
 
-export const entries: Entry[] = [
+const baseEntries: Entry[] = [
   {
     dateISO: '2025-09-08',
     dateLabel: 'Lunes 08 de septiembre del 2025',
@@ -1316,6 +1322,397 @@ export const entries: Entry[] = [
     imageFile: 'entry-2026-01-26.svg'
   }
 ];
+
+
+const evidenceByEntry: Record<string, EvidenceItem[]> = {
+  "2025-09-08::An\u00e1lisis inicial del reto VEX Robotics 2025-2026 PUSH BACK": [
+    { caption: "Imagen 1.1 Vista general del campo de juego", src: "assets/svg/evidence/imagen-1-1-vista-general-del-campo-de-juego-p010.svg" },
+    { caption: "Imagen 1.7 Puntuaci\u00f3n por bloque", src: "assets/svg/evidence/imagen-1-7-puntuacion-por-bloque-p011.svg" },
+    { caption: "Imagen 1.8 Bonus por control de las porter\u00edas largas", src: "assets/svg/evidence/imagen-1-8-bonus-por-control-de-las-porterias-largas-p012.svg" },
+    { caption: "Imagen 1.9 Bonus en las porter\u00edas centrales", src: "assets/svg/evidence/imagen-1-9-bonus-en-las-porterias-centrales-p012.svg" },
+    { caption: "Imagen 1.10 Bonus porque uno se estacione", src: "assets/svg/evidence/imagen-1-10-bonus-porque-uno-se-estacione-p012.svg" },
+    { caption: "Imagen 1.11 Bonus porque se estacionen los dos", src: "assets/svg/evidence/imagen-1-11-bonus-porque-se-estacionen-los-p012.svg" },
+    { caption: "Imagen 1.12 Regla de bloques dentro de l\u00edneas", src: "assets/svg/evidence/imagen-1-12-el-bloque-mas-a-la-izquierda-rojo-no-esta-com-p013.svg" },
+    { caption: "Imagen 1.13 Bloque puntuado", src: "assets/svg/evidence/imagen-1-13-el-bloque-verde-a-la-derecha-esta-completamen-p013.svg" },
+    { caption: "Imagen 1.2 Dimensiones de las porter\u00edas largas", src: "assets/svg/evidence/imagen-1-2-dimensiones-de-las-porterias-largas-p014.svg" },
+    { caption: "Imagen 1.3 Dimensiones de la porter\u00eda central", src: "assets/svg/evidence/imagen-1-3-dimensiones-de-la-p014.svg" },
+    { caption: "Imagen 1.4 Medidas del \u00e1rea de estacionamiento", src: "assets/svg/evidence/imagen-4-evidencia-p014.svg" },
+    { caption: "Imagen 1.5 Medidas del cargador", src: "assets/svg/evidence/imagen-1-5-medidas-del-cargador-p014.svg" },
+    { caption: "Imagen 1.6 Medidas del bloque", src: "assets/svg/evidence/imagen-2-evidencia-p015.svg" },
+    { caption: "Imagen 1.7 Medidas y distribuci\u00f3n del campo de juego", src: "assets/svg/evidence/imagen-1-7-medidas-y-distribucion-del-p015.svg" },
+    { caption: "Imagen 2.1 Altura de las porter\u00edas largas", src: "assets/svg/evidence/imagen-2-1-altura-de-las-porterias-largas-p016.svg" },
+    { caption: "Imagen 2.2 Altura de la porter\u00eda central alta", src: "assets/svg/evidence/imagen-2-2-altura-de-la-porteria-central-alta-p016.svg" },
+    { caption: "Imagen 2.3 Recargador", src: "assets/svg/evidence/imagen-2-3-recargador-p016.svg" },
+  ],
+  "2025-09-09::Desarmado del robot anterior y organizaci\u00f3n de equipos": [
+    { caption: "Imagen 3.1 Paso 9", src: "assets/svg/evidence/imagen-3-1-paso-9-p018.svg" },
+    { caption: "Imagen 3.2 Paso 13", src: "assets/svg/evidence/imagen-3-2-paso-13-p018.svg" },
+    { caption: "Imagen 3.3 Paso 14", src: "assets/svg/evidence/imagen-3-3-paso-14-p018.svg" },
+    { caption: "Imagen 3.2 El robot siendo desarmado", src: "assets/svg/evidence/imagen-3-2-el-robot-siendo-desarmado-p019.svg" },
+    { caption: "Imagen 3.1 El robot siendo desarmado", src: "assets/svg/evidence/imagen-3-1-el-robot-siendo-p019.svg" },
+  ],
+  "2025-09-10::Prototipo anterior desarmado y avance del prototipo guiado": [
+    { caption: "Imagen 4.1 Prototipo completamente desarmado", src: "assets/svg/evidence/imagen-4-1-prototipo-completamente-desarmado-p020.svg" },
+    { caption: "Imagen 4.2 Paso 19", src: "assets/svg/evidence/imagen-4-2-paso-19-p020.svg" },
+    { caption: "Imagen 4.3 Paso 25", src: "assets/svg/evidence/imagen-4-3-paso-25-p020.svg" },
+    { caption: "Imagen 4.4 Paso 36c", src: "assets/svg/evidence/imagen-4-4-paso-36c-p020.svg" },
+  ],
+  "2025-09-15::Avance del prototipo guiado hasta base de elevaci\u00f3n": [
+    { caption: "Imagen 5.1 Paso 44c", src: "assets/svg/evidence/imagen-5-1-paso-44c-p022.svg" },
+    { caption: "Imagen 5.2 Paso 53c", src: "assets/svg/evidence/imagen-5-2-paso-53c-p022.svg" },
+    { caption: "Imagen 5.3 Paso 54", src: "assets/svg/evidence/imagen-5-3-paso-54-p022.svg" },
+    { caption: "Imagen 5.4 Paso 61", src: "assets/svg/evidence/imagen-5-4-paso-61-p022.svg" },
+    { caption: "Imagen 5.5 Paso 68", src: "assets/svg/evidence/imagen-5-5-paso-68-p022.svg" },
+  ],
+  "2025-09-16::Armado del prototipo guiado hasta el paso 98c": [
+    { caption: "Imagen 6.1 Paso 70", src: "assets/svg/evidence/imagen-6-1-paso-70-p023.svg" },
+    { caption: "Imagen 6.2 Paso 87", src: "assets/svg/evidence/imagen-6-2-paso-87-p023.svg" },
+    { caption: "Imagen 6.3 Paso 98", src: "assets/svg/evidence/imagen-6-3-paso-98-p023.svg" },
+  ],
+  "2025-09-17::Armado del prototipo guiado hasta el paso 113c": [
+    { caption: "Imagen 6.4 Paso 100", src: "assets/svg/evidence/imagen-6-4-paso-100-p024.svg" },
+    { caption: "Imagen 6.5 Paso 101", src: "assets/svg/evidence/imagen-6-5-paso-101-p024.svg" },
+    { caption: "Imagen 6.6 Paso 102", src: "assets/svg/evidence/imagen-6-6-paso-102-p024.svg" },
+    { caption: "Imagen 6.7 Paso 104", src: "assets/svg/evidence/imagen-6-7-paso-104-p024.svg" },
+    { caption: "Imagen 6.8 Paso 112", src: "assets/svg/evidence/imagen-6-8-paso-112-p024.svg" },
+    { caption: "Imagen 6.9 Paso 113", src: "assets/svg/evidence/imagen-6-9-paso-113-p024.svg" },
+  ],
+  "2025-09-23::Armado del prototipo guiado hasta el paso 132c": [
+    { caption: "Imagen 7.1 Paso 116", src: "assets/svg/evidence/imagen-7-1-paso-116-p025.svg" },
+    { caption: "Imagen 7.2 Paso 116c", src: "assets/svg/evidence/imagen-7-2-paso-116-c-p025.svg" },
+    { caption: "Imagen 7.3 Paso 132", src: "assets/svg/evidence/imagen-7-3-paso-132-p025.svg" },
+  ],
+  "2025-09-24::Instalaci\u00f3n de Inventor y avance del prototipo guiado": [
+    { caption: "Imagen 7.4 Instalaci\u00f3n de Inventor", src: "assets/svg/evidence/imagen-7-4-instalacion-de-inventor-p026.svg" },
+    { caption: "Imagen 7.5 Paso 137", src: "assets/svg/evidence/imagen-7-5-paso-137-p026.svg" },
+    { caption: "Imagen 7.6 Paso 140", src: "assets/svg/evidence/imagen-7-6-paso-140-p027.svg" },
+    { caption: "Imagen 7.7 Paso 141", src: "assets/svg/evidence/imagen-7-7-paso-141-p027.svg" },
+    { caption: "Imagen 7.8 Paso 143", src: "assets/svg/evidence/imagen-7-8-paso-143-p027.svg" },
+    { caption: "Imagen 7.9 Paso 148", src: "assets/svg/evidence/imagen-7-9-paso-148-p027.svg" },
+    { caption: "Imagen 8.0 Paso 154", src: "assets/svg/evidence/imagen-8-0-paso-154-p027.svg" },
+    { caption: "Imagen 8.1 Paso 155", src: "assets/svg/evidence/imagen-8-1-paso-155-p027.svg" },
+    { caption: "Imagen 8.2 Paso 162", src: "assets/svg/evidence/imagen-8-2-paso-162-p028.svg" },
+    { caption: "Imagen 8.3 Trabajando en el armado del prototipo guiado", src: "assets/svg/evidence/imagen-8-3-trabajando-en-el-armado-del-prototipo-guiado-p028.svg" },
+    { caption: "Imagen 8.4 Trabajando en el armado", src: "assets/svg/evidence/imagen-8-4-evidencia-p028.svg" },
+    { caption: "Imagen 8.5 Trabajando en el armado", src: "assets/svg/evidence/imagen-8-5-trabajando-en-el-armado-p028.svg" },
+  ],
+  "2025-09-25::Designaci\u00f3n de encargados y subencargados": [
+    { caption: "Imagen 9.0 Paso 164c", src: "assets/svg/evidence/imagen-9-0-paso-164c-p030.svg" },
+    { caption: "Imagen 9.1 Paso 165", src: "assets/svg/evidence/imagen-9-1-paso-165-p030.svg" },
+    { caption: "Imagen 9.2 Paso 170c", src: "assets/svg/evidence/imagen-9-2-paso-170c-p030.svg" },
+  ],
+  "2025-09-29::Avance del prototipo guiado, VEXcode V5 y gesti\u00f3n de apoyos": [
+    { caption: "Imagen 10.1 Reuni\u00f3n con el Mtr. Juan Pablo Herrera", src: "assets/svg/evidence/imagen-10-1-reunion-con-el-mtr-juan-pablo-herrera-p031.svg" },
+    { caption: "Imagen 10.2 Reuni\u00f3n con MVZ Francisco P\u00e9rez", src: "assets/svg/evidence/imagen-10-2-reunion-con-mvz-francisco-perez-p032.svg" },
+  ],
+  "2025-09-30::Diagramas del nuevo dise\u00f1o para el regional de Lagunillas": [
+    { caption: "Imagen 11.1 Todos trabajando", src: "assets/svg/evidence/imagen-11-1-todos-trabajando-p034.svg" },
+    { caption: "Imagen 11.2 Pruebas de programaci\u00f3n", src: "assets/svg/evidence/imagen-11-2-pruebas-de-programacion-p034.svg" },
+    { caption: "Imagen 11.3 Dibujando el boceto del robot", src: "assets/svg/evidence/imagen-11-3-dibujando-el-boceto-del-robot-p033.svg" },
+    { caption: "Imagen 11.4 Vista general del robot", src: "assets/svg/evidence/imagen-11-4-vista-general-del-robot-p033.svg" },
+    { caption: "Imagen 11.5 Explicaci\u00f3n gr\u00e1fica del mecanismo", src: "assets/svg/evidence/imagen-11-5-explicacion-grafica-del-mecanismo-p033.svg" },
+  ],
+  "2025-10-01::Dise\u00f1o 3D, impresi\u00f3n de piezas y comienzo del dise\u00f1o propuesto": [
+    { caption: "Imagen 12.1 Dise\u00f1o de piezas", src: "assets/svg/evidence/imagen-12-1-diseno-de-piezas-p035.svg" },
+    { caption: "Imagen 12.2 Comienzo del dise\u00f1o del bloque", src: "assets/svg/evidence/imagen-12-2-comienzo-del-diseno-del-p035.svg" },
+    { caption: "Imagen 12.3 Dise\u00f1o completo del bloque", src: "assets/svg/evidence/imagen-12-3-diseno-completo-del-bloque-p035.svg" },
+    { caption: "Imagen 12.7 Impresi\u00f3n 3D", src: "assets/svg/evidence/imagen-12-7-impresion-3d-p035.svg" },
+    { caption: "Imagen 12.6 Dise\u00f1o 3D en Inventor", src: "assets/svg/evidence/imagen-12-6-diseno-3d-en-inventor-p036.svg" },
+    { caption: "Imagen 12.4 Construcci\u00f3n del mecanismo", src: "assets/svg/evidence/imagen-12-4-construccion-del-mecanismo-p036.svg" },
+    { caption: "Imagen 12.5 Pruebas de c\u00f3mo quedar\u00e1 el mecanismo", src: "assets/svg/evidence/imagen-12-5-pruebas-de-como-quedara-el-p036.svg" },
+  ],
+  "2025-10-02::Cambio de dise\u00f1o, bloque oficial y mecanismo Tank Tread": [
+    { caption: "Imagen 13.1 Dise\u00f1o nuevo", src: "assets/svg/evidence/imagen-13-1-diseno-nuevo-p037.svg" },
+    { caption: "Imagen 13.2 Explicaci\u00f3n", src: "assets/svg/evidence/imagen-13-2-explicacion-p037.svg" },
+    { caption: "Imagen 13.3 Pruebas de funcionamiento del mecanismo de elevaci\u00f3n por cadena de Tank Tread", src: "assets/svg/evidence/imagen-13-3-pruebas-de-funcionamiento-del-mecanismo-de-el-p038.svg" },
+  ],
+  "2025-10-03::Pruebas separadas de mecanismos y dise\u00f1o 3D": [
+    { caption: "Imagen 14.0 Armado y prueba del mecanismo de recolecci\u00f3n", src: "assets/svg/evidence/imagen-14-0-armado-y-prueba-del-mecanismo-de-recoleccion-p039.svg" },
+    { caption: "Imagen 14.1 Pruebas de dise\u00f1o 3D", src: "assets/svg/evidence/imagen-2-evidencia-p039.svg" },
+  ],
+  "2025-10-04::Armado del dise\u00f1o nuevo y sensor girosc\u00f3pico": [
+    { caption: "Imagen 15.0 Armado de los mecanismos", src: "assets/svg/evidence/imagen-15-0-armado-de-los-mecanismos-p040.svg" },
+    { caption: "Imagen 15.1 Armado de la banda", src: "assets/svg/evidence/imagen-15-1-armado-de-la-banda-p040.svg" },
+    { caption: "Imagen 15.2 Conexi\u00f3n del sensor girosc\u00f3pico", src: "assets/svg/evidence/imagen-15-2-conexion-del-sensor-giroscopico-p040.svg" },
+    { caption: "Imagen 15.3 Gyroscope Sensor V1.0", src: "assets/svg/evidence/imagen-15-3-gyroscope-sensor-v1-0-mejora-el-movimiento-au-p040.svg" },
+    { caption: "Imagen 15.3 Pruebas de los mecanismos", src: "assets/svg/evidence/imagen-15-3-pruebas-de-los-mecanismos-p041.svg" },
+  ],
+  "2025-10-06::Dise\u00f1o 3D, porter\u00edas simuladas y ajustes en base": [
+    { caption: "Imagen 16.0 Dise\u00f1o 3D", src: "assets/svg/evidence/imagen-16-0-diseno-3d-p042.svg" },
+    { caption: "Imagen 16.1 Pruebas finales", src: "assets/svg/evidence/imagen-16-1-pruebas-finales-p042.svg" },
+    { caption: "Imagen 16.2 Ajustes en la base", src: "assets/svg/evidence/imagen-16-2-ajustes-en-la-base-p042.svg" },
+    { caption: "Imagen 16.3 Ajustes en la base junto a las llantas", src: "assets/svg/evidence/imagen-16-3-ajustes-en-la-base-junto-a-las-llantas-p042.svg" },
+  ],
+  "2025-10-07::\u00daltimos ajustes antes del regional en Lagunillas": [
+    { caption: "Imagen 17.0 Colocaci\u00f3n de un separador", src: "assets/svg/evidence/imagen-17-0-colocacion-de-un-separador-p043.svg" },
+    { caption: "Imagen 17.1 Pruebas en cancha", src: "assets/svg/evidence/imagen-17-1-pruebas-en-cancha-p043.svg" },
+  ],
+  "2025-10-08::Regional de prueba en Lagunillas": [
+    { caption: "Imagen 17.1 Llegada del equipo al torneo", src: "assets/svg/evidence/imagen-17-1-llegada-del-equipo-al-torneo-p044.svg" },
+    { caption: "Imagen 17.2 Tercer match", src: "assets/svg/evidence/imagen-17-2-3ro-mache-p044.svg" },
+  ],
+  "2025-10-08::Primer c\u00f3digo aut\u00f3nomo realizado durante el regional": [
+    { caption: "Imagen 17.3 Parte 1 del primer c\u00f3digo con aut\u00f3nomo", src: "assets/svg/evidence/imagen-17-3-parte-1-del-primer-codigo-con-autonomo-p045.svg" },
+    { caption: "Imagen 17.4 Parte 2 primer aut\u00f3nomo", src: "assets/svg/evidence/imagen-17-4-parte-2-primer-autonomo-p045.svg" },
+  ],
+  "2025-10-08::Control por driver": [
+    { caption: "Imagen 17.5 Parte 3 control por driver", src: "assets/svg/evidence/imagen-17-5-parte-3-control-por-driver-p046.svg" },
+  ],
+  "2025-10-13::Mejoras posteriores al regional": [
+    { caption: "Imagen 18.0 Armado de la estructura de las llantas para una nueva base cuadrada", src: "assets/svg/evidence/imagen-18-0-armado-de-la-estructura-de-las-llantas-para-u-p047.svg" },
+    { caption: "Imagen 18.1 Presentaci\u00f3n del mecanismo de recolecci\u00f3n y elevaci\u00f3n", src: "assets/svg/evidence/imagen-18-1-presentacion-del-mecanismo-de-recoleccion-y-e-p047.svg" },
+  ],
+  "2025-10-14::Pista simulada, base cuadrada y pi\u00f1\u00f3n-cadena": [
+    { caption: "Imagen 19.0 Corte de madera que servir\u00e1 como soporte de las porter\u00edas", src: "assets/svg/evidence/imagen-19-0-corte-de-madera-que-servira-como-soporte-de-l-p048.svg" },
+    { caption: "Imagen 19.1 Construcci\u00f3n de la cancha", src: "assets/svg/evidence/imagen-19-1-construccion-de-la-cancha-p048.svg" },
+    { caption: "Imagen 19.2 Construcci\u00f3n de la cancha", src: "assets/svg/evidence/imagen-19-2-construccion-de-la-cancha-p048.svg" },
+    { caption: "Imagen 19.3 Base cuadrada con motores directos a las llantas", src: "assets/svg/evidence/imagen-19-3-base-cuadrada-con-motores-directos-a-las-llan-p049.svg" },
+    { caption: "Imagen 19.4 Mecanismo pi\u00f1\u00f3n-cadena 1:1 con pi\u00f1ones de 18 dientes", src: "assets/svg/evidence/imagen-19-4-mecanismo-pinon-cadena-1-1-con-pinones-de-18-p049.svg" },
+    { caption: "Imagen 19.5 Mecanismo ejecutado en la base", src: "assets/svg/evidence/imagen-19-5-mecanismo-ejecutado-en-la-base-p049.svg" },
+    { caption: "Imagen 19.6 Evidencia", src: "assets/svg/evidence/imagen-19-6-evidencia-p050.svg" },
+  ],
+  "2025-10-15::Cadena de prueba, estacionamiento, rodillo y neum\u00e1tica": [
+    { caption: "Imagen 20.0 Cadena de mecanismo de elevaci\u00f3n", src: "assets/svg/evidence/imagen-20-0-cadena-de-mecanismo-de-elevacion-p051.svg" },
+    { caption: "Imagen 20.1 Evidencia", src: "assets/svg/evidence/imagen-3-evidencia-p051.svg" },
+    { caption: "Imagen 20.2 Evidencia", src: "assets/svg/evidence/imagen-20-2-evidencia-p051.svg" },
+    { caption: "Imagen 20.3 Rodillo con engrane de 30 dientes", src: "assets/svg/evidence/imagen-20-3-rodillo-con-engrane-de-30-dientes-p052.svg" },
+    { caption: "Imagen 20.4 Gu\u00eda del armado de los circuitos neum\u00e1ticos", src: "assets/svg/evidence/imagen-20-4-guia-del-armado-de-los-circuitos-neumaticos-p052.svg" },
+  ],
+  "2025-10-16::Desarrollo y construcci\u00f3n del dise\u00f1o 2.0": [
+    { caption: "Imagen 21.0 Vista lateral del Dise\u00f1o 2.0", src: "assets/svg/evidence/imagen-21-0-vista-lateral-del-diseno-2-0-p053.svg" },
+    { caption: "Imagen 21.1 Mecanismo de variaci\u00f3n de altura Dise\u00f1o 2.0", src: "assets/svg/evidence/imagen-21-1-mecanismo-de-variacion-de-altura-diseno-2-0-p053.svg" },
+    { caption: "Imagen 21.2 Instalaci\u00f3n del mecanismo de variaci\u00f3n de altura", src: "assets/svg/evidence/imagen-21-2-instalacion-del-mecanismo-de-variacion-de-alt-p054.svg" },
+    { caption: "Imagen 21.3 / 21.4 Evidencia", src: "assets/svg/evidence/imagen-21-3-imagen21-4-p054.svg" },
+    { caption: "Imagen 21.4 Evidencia adicional", src: "assets/svg/evidence/imagen-3-evidencia-p054.svg" },
+  ],
+  "2025-10-20::Detalles finales del dise\u00f1o 2.0 y mecanismo de recarga": [
+    { caption: "Imagen 22.0 Mecanismo para poder hacer recargas de los tubos", src: "assets/svg/evidence/imagen-22-0-mecanismo-para-poder-hacer-recargas-de-los-tu-p055.svg" },
+    { caption: "Imagen 22.1 Pruebas del primer mecanismo de recarga", src: "assets/svg/evidence/imagen-22-1-pruebas-del-primer-mecanismo-de-recarga-p056.svg" },
+    { caption: "Imagen 22.2 Reajustes del mecanismo de recarga", src: "assets/svg/evidence/imagen-22-2-reajustes-del-mecanismo-de-recarga-p056.svg" },
+    { caption: "Imagen 22.3 Segundo reajuste del mecanismo de recarga", src: "assets/svg/evidence/imagen-22-3-segundo-reajuste-del-mecanismo-de-recarga-p057.svg" },
+    { caption: "Imagen 22.4 Construcci\u00f3n de mecanismo", src: "assets/svg/evidence/imagen-22-4-construccion-de-mecanismo-de-la-p057.svg" },
+    { caption: "Imagen 22.5 Mecanismo de elevaci\u00f3n", src: "assets/svg/evidence/imagen-22-5-mecanismo-de-elevacion-p058.svg" },
+    { caption: "Imagen 22.6 Construcci\u00f3n del mecanismo de elevaci\u00f3n", src: "assets/svg/evidence/imagen-22-6-construccion-del-mecanismo-de-elevacion-p058.svg" },
+  ],
+  "2025-10-21::Torneo de prueba Agostitl\u00e1n": [
+    { caption: "Imagen 23.0 Llegada del equipo a Agostitl\u00e1n", src: "assets/svg/evidence/imagen-23-0-llegada-del-equipo-a-agostitlan-p059.svg" },
+    { caption: "Imagen 23.1 Ajustes entre partidos al robot", src: "assets/svg/evidence/imagen-23-1-ajustes-entre-partidos-al-robot-p059.svg" },
+    { caption: "Imagen 23.2 Partido", src: "assets/svg/evidence/imagen-23-2-partido-p059.svg" },
+    { caption: "Imagen 23.3 Salida de Agostitl\u00e1n", src: "assets/svg/evidence/imagen-23-3-salida-de-agosttitlan-p060.svg" },
+    { caption: "Imagen 23.4 Resultados del torneo", src: "assets/svg/evidence/imagen-23-4-resultados-del-torneo-en-todos-se-obtuvieron-p060.svg" },
+  ],
+  "2025-10-22::An\u00e1lisis posterior al torneo de Agostitl\u00e1n": [
+    { caption: "Imagen 24.0 Primer dise\u00f1o contemplado para mejora posterior a Agostitl\u00e1n", src: "assets/svg/evidence/imagen-24-0-primer-diseno-que-se-contemplo-para-las-mejor-p061.svg" },
+  ],
+  "2025-10-23::Revisi\u00f3n de nuevo dise\u00f1o y materiales faltantes": [
+    { caption: "Imagen 25.0 Segundo dise\u00f1o contemplado para mejora posterior a Agostitl\u00e1n", src: "assets/svg/evidence/imagen-25-0-segundo-diseno-que-se-contemplo-para-las-mejo-p062.svg" },
+  ],
+  "2025-11-04::Pruebas del mecanismo para sacar bloques del tubo de recargas": [
+    { caption: "Imagen 26.0 Primeras pruebas sin instalarlo en el robot", src: "assets/svg/evidence/imagen-26-0-primeras-pruebas-sin-intalarlo-en-el-robot-p063.svg" },
+    { caption: "Imagen 26.1 Evidencia", src: "assets/svg/evidence/imagen-26-1-evidencia-p063.svg" },
+    { caption: "Imagen 26.2 Pruebas con el robot", src: "assets/svg/evidence/imagen-26-2-pruebas-con-el-robot-p063.svg" },
+  ],
+  "2025-11-05::Evidencia visual del desarrollo del robot": [
+    { caption: "Imagen 27.0 Evidencia", src: "assets/svg/evidence/imagen-27-0-evidencia-p064.svg" },
+    { caption: "Imagen 27.1 Evidencia", src: "assets/svg/evidence/imagen-27-1-evidencia-p064.svg" },
+    { caption: "Imagen 27.2 Evidencia", src: "assets/svg/evidence/imagen-27-2-evidencia-p064.svg" },
+    { caption: "Imagen 27.3 Evidencia", src: "assets/svg/evidence/imagen-27-3-evidencia-p065.svg" },
+  ],
+  "2025-11-06::Evidencia visual de ajustes y avances": [
+    { caption: "Imagen 28.0 Evidencia", src: "assets/svg/evidence/imagen-28-0-evidencia-p066.svg" },
+    { caption: "Imagen 28.1 Evidencia", src: "assets/svg/evidence/imagen-28-1-evidencia-p066.svg" },
+    { caption: "Imagen 28.2 Evidencia", src: "assets/svg/evidence/imagen-28-2-evidencia-p067.svg" },
+  ],
+  "2025-11-07::Evidencia visual de pruebas y preparaci\u00f3n": [
+    { caption: "Imagen 29.0 Evidencia", src: "assets/svg/evidence/imagen-29-0-evidencia-p068.svg" },
+    { caption: "Imagen 29.1 Evidencia", src: "assets/svg/evidence/imagen-29-1-evidencia-p068.svg" },
+    { caption: "Imagen 29.2 Evidencia", src: "assets/svg/evidence/imagen-29-2-evidencia-p069.svg" },
+    { caption: "Imagen 29.3 Evidencia", src: "assets/svg/evidence/imagen-29-3-evidencia-p069.svg" },
+    { caption: "Imagen 29.4 Evidencia", src: "assets/svg/evidence/imagen-29-4-evidencia-p070.svg" },
+    { caption: "Imagen 29.5 Evidencia", src: "assets/svg/evidence/imagen-29-5-evidencia-p070.svg" },
+    { caption: "Imagen adicional p070", src: "assets/svg/evidence/imagen-3-evidencia-p070.svg" },
+  ],
+  "2025-11-08::Jornada sabatina de preparaci\u00f3n": [
+    { caption: "Evidencia p071", src: "assets/svg/evidence/imagen-1-evidencia-p071.svg" },
+    { caption: "Evidencia p072 imagen 1", src: "assets/svg/evidence/imagen-1-evidencia-p072.svg" },
+    { caption: "Evidencia p072 imagen 2", src: "assets/svg/evidence/imagen-2-evidencia-p072.svg" },
+    { caption: "Evidencia p072 imagen 3", src: "assets/svg/evidence/imagen-3-evidencia-p072.svg" },
+    { caption: "Evidencia p073 imagen 1", src: "assets/svg/evidence/imagen-1-evidencia-p073.svg" },
+    { caption: "Evidencia p073 imagen 2", src: "assets/svg/evidence/imagen-2-evidencia-p073.svg" },
+  ],
+  "2025-11-09::Jornada dominical de preparaci\u00f3n": [
+    { caption: "Evidencia p074 imagen 1", src: "assets/svg/evidence/imagen-1-evidencia-p074.svg" },
+    { caption: "Evidencia p074 imagen 2", src: "assets/svg/evidence/imagen-2-evidencia-p074.svg" },
+    { caption: "Evidencia p074 imagen 3", src: "assets/svg/evidence/imagen-3-evidencia-p074.svg" },
+    { caption: "Evidencia p074 imagen 4", src: "assets/svg/evidence/imagen-4-evidencia-p074.svg" },
+    { caption: "Evidencia p074 imagen 5", src: "assets/svg/evidence/imagen-5-evidencia-p074.svg" },
+    { caption: "Evidencia p075", src: "assets/svg/evidence/imagen-1-evidencia-p075.svg" },
+  ],
+  "2025-11-10::Preparaci\u00f3n previa a competencia": [
+    { caption: "Evidencia p076 imagen 1", src: "assets/svg/evidence/imagen-1-evidencia-p076.svg" },
+    { caption: "Evidencia p076 imagen 2", src: "assets/svg/evidence/imagen-2-evidencia-p076.svg" },
+    { caption: "Evidencia p076 imagen 3", src: "assets/svg/evidence/imagen-3-evidencia-p076.svg" },
+    { caption: "Evidencia p077 imagen 1", src: "assets/svg/evidence/imagen-1-evidencia-p077.svg" },
+    { caption: "Evidencia p077 imagen 2", src: "assets/svg/evidence/imagen-2-evidencia-p077.svg" },
+    { caption: "Evidencia p077 imagen 3", src: "assets/svg/evidence/imagen-3-evidencia-p077.svg" },
+    { caption: "Evidencia p077 imagen 4", src: "assets/svg/evidence/imagen-4-evidencia-p077.svg" },
+    { caption: "Evidencia p078", src: "assets/svg/evidence/imagen-1-evidencia-p078.svg" },
+  ],
+  "2025-11-11::Seguimiento de preparaci\u00f3n del robot": [
+    { caption: "Evidencia p079 imagen 1", src: "assets/svg/evidence/imagen-1-evidencia-p079.svg" },
+    { caption: "Evidencia p079 imagen 2", src: "assets/svg/evidence/imagen-2-evidencia-p079.svg" },
+    { caption: "Evidencia p079 imagen 3", src: "assets/svg/evidence/imagen-3-evidencia-p079.svg" },
+    { caption: "Evidencia p080", src: "assets/svg/evidence/imagen-1-evidencia-p080.svg" },
+  ],
+  "2025-11-12::Seguimiento de preparaci\u00f3n del robot": [
+    { caption: "Evidencia p081 imagen 1", src: "assets/svg/evidence/imagen-1-evidencia-p081.svg" },
+    { caption: "Evidencia p081 imagen 2", src: "assets/svg/evidence/imagen-2-evidencia-p081.svg" },
+    { caption: "Evidencia p081 imagen 3", src: "assets/svg/evidence/imagen-3-evidencia-p081.svg" },
+    { caption: "Evidencia p082 imagen 1", src: "assets/svg/evidence/imagen-1-evidencia-p082.svg" },
+    { caption: "Evidencia p082 imagen 2", src: "assets/svg/evidence/imagen-2-evidencia-p082.svg" },
+    { caption: "Evidencia p082 imagen 3", src: "assets/svg/evidence/imagen-3-evidencia-p082.svg" },
+  ],
+  "2025-11-13::Torneo Estatal inter CECyTE Michoac\u00e1n \u2014 D\u00eda 1": [
+    { caption: "Evidencia p083 imagen 1", src: "assets/svg/evidence/imagen-1-evidencia-p083.svg" },
+    { caption: "Evidencia p083 imagen 2", src: "assets/svg/evidence/imagen-2-evidencia-p083.svg" },
+    { caption: "Evidencia p083 imagen 3", src: "assets/svg/evidence/imagen-3-evidencia-p083.svg" },
+    { caption: "Evidencia p084 imagen 1", src: "assets/svg/evidence/imagen-1-evidencia-p084.svg" },
+    { caption: "Evidencia p084 imagen 2", src: "assets/svg/evidence/imagen-2-evidencia-p084.svg" },
+  ],
+  "2025-11-14::Torneo Estatal inter CECyTE Michoac\u00e1n \u2014 D\u00eda 2": [
+    { caption: "Evidencia p085 imagen 1", src: "assets/svg/evidence/imagen-1-evidencia-p085.svg" },
+    { caption: "Evidencia p085 imagen 2", src: "assets/svg/evidence/imagen-2-evidencia-p085.svg" },
+    { caption: "Evidencia p085 imagen 3", src: "assets/svg/evidence/imagen-3-evidencia-p085.svg" },
+    { caption: "Evidencia p085 imagen 4", src: "assets/svg/evidence/imagen-4-evidencia-p085.svg" },
+    { caption: "Evidencia p086 imagen 1", src: "assets/svg/evidence/imagen-1-evidencia-p086.svg" },
+    { caption: "Evidencia p086 imagen 2", src: "assets/svg/evidence/imagen-2-evidencia-p086.svg" },
+  ],
+  "2025-11-18::Jornada registrada en bit\u00e1cora f\u00edsica": [
+    { caption: "Evidencia p087 imagen 1", src: "assets/svg/evidence/imagen-1-evidencia-p087.svg" },
+    { caption: "Evidencia p087 imagen 2", src: "assets/svg/evidence/imagen-2-evidencia-p087.svg" },
+    { caption: "Evidencia p087 imagen 3", src: "assets/svg/evidence/imagen-3-evidencia-p087.svg" },
+    { caption: "Evidencia p087 imagen 4", src: "assets/svg/evidence/imagen-4-evidencia-p087.svg" },
+    { caption: "Evidencia p087 imagen 5", src: "assets/svg/evidence/imagen-5-evidencia-p087.svg" },
+    { caption: "Evidencia p088 imagen 1", src: "assets/svg/evidence/imagen-1-evidencia-p088.svg" },
+    { caption: "Evidencia p088 imagen 2", src: "assets/svg/evidence/imagen-2-evidencia-p088.svg" },
+    { caption: "Evidencia p088 imagen 3", src: "assets/svg/evidence/imagen-3-evidencia-p088.svg" },
+    { caption: "Evidencia p088 imagen 4", src: "assets/svg/evidence/imagen-4-evidencia-p088.svg" },
+    { caption: "Evidencia p088 imagen 5", src: "assets/svg/evidence/imagen-5-evidencia-p088.svg" },
+  ],
+  "2025-11-19::Jornada registrada en bit\u00e1cora f\u00edsica": [
+    { caption: "Evidencia p089 imagen 1", src: "assets/svg/evidence/imagen-1-evidencia-p089.svg" },
+    { caption: "Evidencia p089 imagen 2", src: "assets/svg/evidence/imagen-2-evidencia-p089.svg" },
+    { caption: "Evidencia p089 imagen 3", src: "assets/svg/evidence/imagen-3-evidencia-p089.svg" },
+    { caption: "Evidencia p089 imagen 4", src: "assets/svg/evidence/imagen-4-evidencia-p089.svg" },
+    { caption: "Evidencia p089 imagen 5", src: "assets/svg/evidence/imagen-5-evidencia-p089.svg" },
+    { caption: "Evidencia p090 imagen 1", src: "assets/svg/evidence/imagen-1-evidencia-p090.svg" },
+    { caption: "Evidencia p090 imagen 2", src: "assets/svg/evidence/imagen-2-evidencia-p090.svg" },
+    { caption: "Evidencia p090 imagen 3", src: "assets/svg/evidence/imagen-3-evidencia-p090.svg" },
+    { caption: "Evidencia p090 imagen 4", src: "assets/svg/evidence/imagen-4-evidencia-p090.svg" },
+  ],
+  "2025-11-21::Jornada registrada en bit\u00e1cora f\u00edsica": [
+    { caption: "Evidencia p091 imagen 1", src: "assets/svg/evidence/imagen-1-evidencia-p091.svg" },
+    { caption: "Evidencia p091 imagen 2", src: "assets/svg/evidence/imagen-2-evidencia-p091.svg" },
+    { caption: "Evidencia p091 imagen 3", src: "assets/svg/evidence/imagen-3-evidencia-p091.svg" },
+    { caption: "Evidencia p091 imagen 4", src: "assets/svg/evidence/imagen-4-evidencia-p091.svg" },
+    { caption: "Evidencia p091 imagen 5", src: "assets/svg/evidence/imagen-5-evidencia-p091.svg" },
+    { caption: "Evidencia p091 imagen 6", src: "assets/svg/evidence/imagen-6-evidencia-p091.svg" },
+    { caption: "Evidencia p091 imagen 7", src: "assets/svg/evidence/imagen-7-evidencia-p091.svg" },
+    { caption: "Evidencia p091 imagen 8", src: "assets/svg/evidence/imagen-8-evidencia-p091.svg" },
+    { caption: "Evidencia p091 imagen 9", src: "assets/svg/evidence/imagen-9-evidencia-p091.svg" },
+  ],
+  "2025-11-24::Jornada registrada en bit\u00e1cora f\u00edsica": [
+    { caption: "Evidencia p092 imagen 1", src: "assets/svg/evidence/imagen-1-evidencia-p092.svg" },
+    { caption: "Evidencia p092 imagen 2", src: "assets/svg/evidence/imagen-2-evidencia-p092.svg" },
+  ],
+  "2025-12-01::Jornada registrada en bit\u00e1cora f\u00edsica": [
+    { caption: "Evidencia p093 imagen 1", src: "assets/svg/evidence/imagen-1-evidencia-p093.svg" },
+    { caption: "Evidencia p093 imagen 2", src: "assets/svg/evidence/imagen-2-evidencia-p093.svg" },
+    { caption: "Evidencia p093 imagen 3", src: "assets/svg/evidence/imagen-3-evidencia-p093.svg" },
+    { caption: "Evidencia p093 imagen 4", src: "assets/svg/evidence/imagen-4-evidencia-p093.svg" },
+    { caption: "Evidencia p093 imagen 5", src: "assets/svg/evidence/imagen-5-evidencia-p093.svg" },
+    { caption: "Evidencia p093 imagen 6", src: "assets/svg/evidence/imagen-6-evidencia-p093.svg" },
+  ],
+  "2025-12-03::Jornada registrada en bit\u00e1cora f\u00edsica": [
+    { caption: "Evidencia p094 imagen 1", src: "assets/svg/evidence/imagen-1-evidencia-p094.svg" },
+    { caption: "Evidencia p094 imagen 2", src: "assets/svg/evidence/imagen-2-evidencia-p094.svg" },
+    { caption: "Evidencia p094 imagen 3", src: "assets/svg/evidence/imagen-3-evidencia-p094.svg" },
+  ],
+  "2025-12-11::Jornada registrada en bit\u00e1cora f\u00edsica": [
+    { caption: "Evidencia p095 imagen 1", src: "assets/svg/evidence/imagen-1-evidencia-p095.svg" },
+    { caption: "Evidencia p095 imagen 2", src: "assets/svg/evidence/imagen-2-evidencia-p095.svg" },
+  ],
+  "2026-01-09::Jornada registrada en bit\u00e1cora f\u00edsica": [
+    { caption: "Evidencia p096 imagen 1", src: "assets/svg/evidence/imagen-1-evidencia-p096.svg" },
+    { caption: "Evidencia p096 imagen 2", src: "assets/svg/evidence/imagen-2-evidencia-p096.svg" },
+    { caption: "Evidencia p096 imagen 3", src: "assets/svg/evidence/imagen-3-evidencia-p096.svg" },
+  ],
+  "2026-01-12::Jornada registrada en bit\u00e1cora f\u00edsica": [
+    { caption: "Evidencia p097 imagen 1", src: "assets/svg/evidence/imagen-1-evidencia-p097.svg" },
+    { caption: "Evidencia p097 imagen 2", src: "assets/svg/evidence/imagen-2-evidencia-p097.svg" },
+    { caption: "Evidencia p097 imagen 3", src: "assets/svg/evidence/imagen-3-evidencia-p097.svg" },
+    { caption: "Evidencia p097 imagen 4", src: "assets/svg/evidence/imagen-4-evidencia-p097.svg" },
+    { caption: "Evidencia p097 imagen 5", src: "assets/svg/evidence/imagen-5-evidencia-p097.svg" },
+    { caption: "Evidencia p097 imagen 6", src: "assets/svg/evidence/imagen-6-evidencia-p097.svg" },
+  ],
+  "2026-01-13::Registro de orientaci\u00f3n izquierda y derecha": [
+    { caption: "Evidencia p098 imagen 1", src: "assets/svg/evidence/imagen-1-evidencia-p098.svg" },
+    { caption: "Evidencia p098 imagen 2", src: "assets/svg/evidence/imagen-2-evidencia-p098.svg" },
+    { caption: "Evidencia p098 imagen 3", src: "assets/svg/evidence/imagen-3-evidencia-p098.svg" },
+    { caption: "Evidencia p099 imagen 1", src: "assets/svg/evidence/imagen-1-evidencia-p099.svg" },
+    { caption: "Evidencia p099 imagen 2", src: "assets/svg/evidence/imagen-2-evidencia-p099.svg" },
+    { caption: "Evidencia p099 imagen 3", src: "assets/svg/evidence/imagen-3-evidencia-p099.svg" },
+    { caption: "Evidencia p099 imagen 4", src: "assets/svg/evidence/imagen-4-evidencia-p099.svg" },
+  ],
+  "2026-01-14::Refuerzo de estructura": [
+    { caption: "Evidencia p100 imagen 1", src: "assets/svg/evidence/imagen-1-evidencia-p100.svg" },
+    { caption: "Evidencia p100 imagen 2", src: "assets/svg/evidence/imagen-2-evidencia-p100.svg" },
+    { caption: "Evidencia p100 imagen 3", src: "assets/svg/evidence/imagen-3-evidencia-p100.svg" },
+    { caption: "Evidencia p100 imagen 4", src: "assets/svg/evidence/imagen-4-evidencia-p100.svg" },
+    { caption: "Evidencia p100 imagen 5", src: "assets/svg/evidence/imagen-5-evidencia-p100.svg" },
+    { caption: "Evidencia p100 imagen 6", src: "assets/svg/evidence/imagen-6-evidencia-p100.svg" },
+    { caption: "Evidencia p100 imagen 7", src: "assets/svg/evidence/imagen-7-evidencia-p100.svg" },
+    { caption: "Evidencia p100 imagen 8", src: "assets/svg/evidence/imagen-8-evidencia-p100.svg" },
+    { caption: "Evidencia p100 imagen 9", src: "assets/svg/evidence/imagen-9-evidencia-p100.svg" },
+    { caption: "Evidencia p101 imagen 1", src: "assets/svg/evidence/imagen-1-evidencia-p101.svg" },
+    { caption: "Evidencia p101 imagen 2", src: "assets/svg/evidence/imagen-2-evidencia-p101.svg" },
+    { caption: "Evidencia p101 imagen 3", src: "assets/svg/evidence/imagen-3-evidencia-p101.svg" },
+    { caption: "Evidencia p101 imagen 4", src: "assets/svg/evidence/imagen-4-evidencia-p101.svg" },
+    { caption: "Evidencia p101 imagen 5", src: "assets/svg/evidence/imagen-5-evidencia-p101.svg" },
+    { caption: "Evidencia p101 imagen 6", src: "assets/svg/evidence/imagen-6-evidencia-p101.svg" },
+    { caption: "Evidencia p101 imagen 7", src: "assets/svg/evidence/imagen-7-evidencia-p101.svg" },
+    { caption: "Evidencia p101 imagen 8", src: "assets/svg/evidence/imagen-8-evidencia-p101.svg" },
+  ],
+  "2026-01-19::Jornada registrada en bit\u00e1cora f\u00edsica": [
+    { caption: "Evidencia p102 imagen 1", src: "assets/svg/evidence/imagen-1-evidencia-p102.svg" },
+    { caption: "Evidencia p102 imagen 2", src: "assets/svg/evidence/imagen-2-evidencia-p102.svg" },
+    { caption: "Evidencia p102 imagen 3", src: "assets/svg/evidence/imagen-3-evidencia-p102.svg" },
+    { caption: "Evidencia p102 imagen 4", src: "assets/svg/evidence/imagen-4-evidencia-p102.svg" },
+    { caption: "Evidencia p102 imagen 5", src: "assets/svg/evidence/imagen-5-evidencia-p102.svg" },
+    { caption: "Evidencia p103 imagen 1", src: "assets/svg/evidence/imagen-1-evidencia-p103.svg" },
+    { caption: "Evidencia p103 imagen 2", src: "assets/svg/evidence/imagen-2-evidencia-p103.svg" },
+  ],
+  "2026-01-22::Jornada registrada en bit\u00e1cora f\u00edsica": [
+    { caption: "Evidencia p104 imagen 1", src: "assets/svg/evidence/imagen-1-evidencia-p104.svg" },
+  ],
+  "2026-01-23::Jornada registrada en bit\u00e1cora f\u00edsica": [
+    { caption: "Evidencia p105 imagen 1", src: "assets/svg/evidence/imagen-1-evidencia-p105.svg" },
+    { caption: "Evidencia p105 imagen 2", src: "assets/svg/evidence/imagen-2-evidencia-p105.svg" },
+    { caption: "Evidencia p105 imagen 3", src: "assets/svg/evidence/imagen-3-evidencia-p105.svg" },
+    { caption: "Evidencia p105 imagen 4", src: "assets/svg/evidence/imagen-4-evidencia-p105.svg" },
+  ],
+  "2026-01-26::Prueba del aut\u00f3nomo": [
+    { caption: "Evidencia p106 imagen 1", src: "assets/svg/evidence/imagen-1-evidencia-p106.svg" },
+    { caption: "Evidencia p106 imagen 2", src: "assets/svg/evidence/imagen-2-evidencia-p106.svg" },
+    { caption: "Evidencia p106 imagen 3", src: "assets/svg/evidence/imagen-3-evidencia-p106.svg" },
+    { caption: "Evidencia p106 imagen 4", src: "assets/svg/evidence/imagen-4-evidencia-p106.svg" },
+  ],
+};
+
+export const entries: Entry[] = baseEntries.map((entry) => ({
+  ...entry,
+  evidence: evidenceByEntry[`${entry.dateISO}::${entry.title}`] ?? entry.evidence
+}));
 
 export const sectionSourceReferences = {
   initial: sourceInitial,
