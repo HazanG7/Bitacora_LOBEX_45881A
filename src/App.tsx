@@ -253,6 +253,7 @@ export default function LobexDigitalNotebook() {
                     </div>
 
                     <EvidenceCarousel
+                      evidence={entry.evidence}
                       imageRefs={entry.imageRefs}
                       imageFile={entry.imageFile}
                       title={entry.title}
