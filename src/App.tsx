@@ -4,6 +4,8 @@ import {
   CalendarDays,
   ChevronRight,
   Code2,
+  Download,
+  FileText,
   HandCoins,
   Image as ImageIcon,
   Layers3,
@@ -30,6 +32,8 @@ const notebookImages = {
   robotLogo: asset('robotLogo.svg'),
   teamPhoto: asset('teamPhoto.svg')
 } as const;
+
+const pdfUrl = `${import.meta.env.BASE_URL}assets/pdf/bitacora-lobex-45881a.pdf`;
 
 const stats = [
   { label: 'Temporada', value: coverInfo.season, icon: Rocket },
@@ -114,6 +118,28 @@ export default function LobexDigitalNotebook() {
         <div className="relative mx-auto max-w-7xl px-5 py-10 md:py-16">
           <div className="grid items-center gap-10 lg:grid-cols-[1.2fr_.8fr]">
             <motion.div initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
+              <div className="mb-5 flex flex-wrap items-center gap-3">
+                <a
+                  href={pdfUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center gap-2 rounded-full border border-red-400/40 bg-red-600 px-5 py-3 text-sm font-bold text-white shadow-lg shadow-red-950/30 transition hover:bg-red-500"
+                >
+                  <FileText className="h-4 w-4" />
+                  Ver bitácora en PDF
+                </a>
+                <a
+                  href={pdfUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  download="Bitacora_LOBEX_45881A.pdf"
+                  className="inline-flex items-center justify-center gap-2 rounded-full border border-white/20 bg-black/40 px-5 py-3 text-sm font-bold text-white transition hover:bg-white/10"
+                >
+                  <Download className="h-4 w-4" />
+                  Descargar bitácora PDF
+                </a>
+              </div>
+
               <div className="mb-5 inline-flex rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-zinc-200 backdrop-blur">
                 Digital Engineering Notebook · VEX V5RC PUSH BACK
               </div>
